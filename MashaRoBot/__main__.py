@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hai {mention_html(user.id, user.first_name)}! 
+Hai {}! 
 [Rosi](https://t.me/RossiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
@@ -321,7 +321,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_")]]
+                    [[InlineKeyboardButton(text="Kembali", callback_data="help_back")]]
                 ),
             )
 
@@ -561,7 +561,7 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="⬅️Back", callback_data="aboutmanu_back")]]
             ),
         )
 
