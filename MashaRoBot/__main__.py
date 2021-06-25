@@ -74,8 +74,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hai {}! 
-[Rosi](https://t.me/RossiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
+Hai yang disana! 
+[Grup Manajer](https://t.me/GrupManajerBot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
  
@@ -84,7 +84,7 @@ Tekan /help untuk *melihat semua perintah* dan bagaimana mereka bekerja!
 """
 
 buttons = [
-    [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/RossiManage_bot?startgroup=start"),
+    [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/GrupManajerBot?startgroup=start"),
     ],
     [   InlineKeyboardButton(text="👥 Grup", url="https://t.me/nothingspecialonhere/10"),
         InlineKeyboardButton(text="Channel 📢", url="https://t.me/nothingspecialonhere/10"),
@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Hai {mention_html(user.id, user.first_name)}!\nSupaya bisa memberi pengaturan,  gunakan <code>/settings</code>".format(
+            "Saya sedang online!\n<b>Online sejak:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -304,14 +304,11 @@ def help_button(update, context):
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
-
-    print(query.message.chat.id)
-
     try:
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "「 *HELP FOR* *{}* 」:\n".format(
+                "*｢  Help  for  {}  module 」*\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -319,19 +316,37 @@ def help_button(update, context):
             query.message.edit_text(
                 text=text,
                 parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Kembali", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                 ),
             )
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
             query.message.edit_text(
-                text=HELP_STRINGS,
+                HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, HELPABLE, "help")
+                ),
+            )
+
+        elif next_match:
+            next_page = int(next_match.group(1))
+            query.message.edit_text(
+                HELP_STRINGS,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(
+                    paginate_modules(next_page + 1, HELPABLE, "help")
+                ),
+            )
+
+        elif back_match:
+            query.message.edit_text(
+                text=HELP_STRINGS,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(
+                    paginate_modules(0, HELPABLE, "help")
                 ),
             )
 
@@ -357,7 +372,7 @@ def DaisyX_about_callback(update, context):
         query.message.edit_text(
             text=f"*Grup Manager* adalah Bot yang copas penampilan dari Grup Help dan hasil cloning dari beberapa repo manager yang ada, daring sejak 23 april 2020 dan terus diperbarui!"
             f"\n\n*Versi Bot:* _2.0_"
-            f"\n\nTerima kasih kepada *SaitamaRobot*, *DaisyX* dan semua manajer peladen lainnya, semua admin bot, semua *pendukung*, dan semua pengguna yang membantu kami dalam mengelola, *donatur*, dan semua pengguna yang melaporkan kesalahan atau fitur baru kepada kami."
+            f"\n\nTerima kasih kepada *SaitamaRobot*, *Masha* dan semua manajer peladen lainnya, semua admin bot, semua *pendukung*, dan semua pengguna yang membantu kami dalam mengelola, *donatur*, dan semua pengguna yang melaporkan kesalahan atau fitur baru kepada kami."
             f"\n\nJuga terima kasih kepada *semua grup* yang menggunakan bot kami, kami terus belajar agar tidak copas doang!"
             f"\n💡 [Terms & Conditions](https://telegra.ph/Terms-and-Conditions-06-23)",
             parse_mode=ParseMode.MARKDOWN,
@@ -561,7 +576,7 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="⬅️Back", callback_data="aboutmanu_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
             ),
         )
 
