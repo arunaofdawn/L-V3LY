@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hai {mention_markdown(user.id, user.first_name)}! 
+Hai {mention_html(user.id, user.first_name)}! 
 [Rosi](https://t.me/RossiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
