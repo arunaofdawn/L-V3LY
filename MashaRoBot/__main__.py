@@ -74,8 +74,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hai yang disana! 
-[Grup Manajer](https://t.me/GrupManajerBot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
+Hai {mention_markdown(user.id, user.first_name)}! 
+[Rosi](https://t.me/RossiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
  
@@ -84,7 +84,7 @@ Tekan /help untuk *melihat semua perintah* dan bagaimana mereka bekerja!
 """
 
 buttons = [
-    [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/GrupManajerBot?startgroup=start"),
+    [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/RossiManage_bot?startgroup=start"),
     ],
     [   InlineKeyboardButton(text="👥 Grup", url="https://t.me/nothingspecialonhere/10"),
         InlineKeyboardButton(text="Channel 📢", url="https://t.me/nothingspecialonhere/10"),
@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Hai yang disana!\nSupaya bisa memberi pengaturan,  gunakan <code>/settings</code>".format(
+            "Hai {mention_html(user.id, user.first_name)}!\nSupaya bisa memberi pengaturan,  gunakan <code>/settings</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -321,7 +321,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_back")]]
+                    [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_")]]
                 ),
             )
 
