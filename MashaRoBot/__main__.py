@@ -428,7 +428,7 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Admin", callback_data="aboutmanu_admin"),
+                        InlineKeyboardButton(text="Admin", callback_data="__mod_name__ = "ᴀᴅᴍɪɴ⚜️"),
                         InlineKeyboardButton(text="AntiFlood", callback_data="aboutmanu_antiflood"),
                         InlineKeyboardButton(text="Banned", callback_data="aboutmanu_banned"),
                     ],
