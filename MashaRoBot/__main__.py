@@ -407,12 +407,12 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="💁🏻‍♂Perintah dasar", callback_data="aboutmanu_permis"),
-                        InlineKeyboardButton(text="🙋🏻‍♂Lanjutan", callback_data="aboutmanu_spamprot"),
+                        InlineKeyboardButton(text="Basic", callback_data="aboutmanu_permis"),
+                        InlineKeyboardButton(text="Advanced", url="https://t.me/nothingspecialonhere/10"),
                     ],
                     [
-                        InlineKeyboardButton(text="🕵🏻Ahli", callback_data="aboutmanu_expert"),
-                        InlineKeyboardButton(text="💆🏻‍♂Panduan Pro", callback_data="aboutmanu_guide"),   
+                        InlineKeyboardButton(text="Fun", url="https://t.me/nothingspecialonhere/10"),
+                        InlineKeyboardButton(text="Tools", url="https://t.me/nothingspecialonhere/10"),   
                     ],
                     [
                         InlineKeyboardButton(text="➕Bantuan Lengkap➕",callback_data="help_back")
@@ -422,7 +422,40 @@ def DaisyX_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "aboutmanu_credit":
+    elif query.data == "aboutmanu_permis":
+        query.message.edit_text(
+            text=f"*Basic Commands*"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="Admin", callback_data="aboutmanu_admin"),
+                        InlineKeyboardButton(text="AntiFlood", callback_data="aboutmanu_antiflood"),
+                        InlineKeyboardButton(text="Banned", callback_data="aboutmanu_banned"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Blacklist", callback_data="aboutmanu_blacklist"),
+                        InlineKeyboardButton(text="Bl Stiker", callback_data="aboutmanu_blstiker"),   
+                        InlineKeyboardButton(text="B Teks", callback_data="aboutmanu_bteks"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Delete", callback_data="aboutmanu_hapus"),
+                        InlineKeyboardButton(text="Mute", callback_data="aboutmanu_bisu"),
+                        InlineKeyboardButton(text="Rules",callback_data="aboutmanu_rules")
+                    ],
+                    [
+                        InlineKeyboardButton(text="Tag", callback_data="aboutmanu_tag"),
+                        InlineKeyboardButton(text="Warns", callback_data="aboutmanu_warns"),
+                        InlineKeyboardButton(text="Welcome",callback_data="aboutmanu_welcome")
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_back")],
+                ]
+            ),
+        )    
+    elif query.data == "aboutmanu_admin":
         query.message.edit_text(
             text=f"*{dispatcher.bot.first_name} Is the redisigned version of Daisy and Naruto for the best performance.*"
             f"\n\nBased on [Daisy](https://github.com/inukaasith/daisy) + [Naruto](https://github.com/imjanindu/narutorobot)."
@@ -431,11 +464,11 @@ def DaisyX_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_tac")]]
+                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
             ),
         )
 
-    elif query.data == "aboutmanu_permis":
+    elif query.data == "aboutmanu_antiflood":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
             f"\n\n👮🏻Tersedia untuk Admin"
@@ -451,10 +484,10 @@ def DaisyX_about_callback(update, context):
             f"\n\n◽️ `/admins` memberikan Daftar lengkap admin grup",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
             ),
         )
-    elif query.data == "aboutmanu_spamprot":
+    elif query.data == "aboutmanu_banned":
         query.message.edit_text(
             text="*Perintah Lanjutan*"
             "\n\n🔘Tersedia untuk Admin"
@@ -469,10 +502,10 @@ def DaisyX_about_callback(update, context):
             "\n\n👮🏻 `/antispam [on/off]` Mengatur keamanan antispam di grup. Ini akan membantu melindungi Anda dan grup Anda dengan menghapus pembanjir spam secepat mungkin",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
             ),
         )  
-    elif query.data == "aboutmanu_expert":
+    elif query.data == "aboutmanu_blacklist":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
             f"\n\n👮🏻Tersedia untuk Admin"
@@ -483,10 +516,10 @@ def DaisyX_about_callback(update, context):
             f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
             ),
         )
-    elif query.data == "aboutmanu_guide":
+    elif query.data == "aboutmanu_blstiker":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
             f"\n\n👮🏻Tersedia untuk Admin"
@@ -497,9 +530,107 @@ def DaisyX_about_callback(update, context):
             f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        ) 
+    elif query.data == "aboutmanu_bteks":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
             ),
         )
+    elif query.data == "aboutmanu_hapus":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+   elif query.data == "aboutmanu_bisu":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_rules":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_tag":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+   elif query.data == "aboutmanu_warns":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_welcome":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )      
     elif query.data == "aboutmanu_tac":
         query.message.edit_text(
             text=f"<b> ｢ Terms and Conditions 」</b>\n"
