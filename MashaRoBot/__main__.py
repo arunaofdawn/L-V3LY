@@ -90,7 +90,7 @@ buttons = [
         InlineKeyboardButton(text="Channel 📢", url="https://t.me/nothingspecialonhere/10"),
     ],
     [
-        InlineKeyboardButton(text="🔧 Bantuan",callback_data="help_back"),
+        InlineKeyboardButton(text="🔧 Bantuan",callback_data="aboutmanu_howto"),
         InlineKeyboardButton(text="Informasi 💬",callback_data="aboutmanu_"),   
     ],
     [    
@@ -382,9 +382,6 @@ def DaisyX_about_callback(update, context):
                     [
                         InlineKeyboardButton(text="Bantuan untuk bot", callback_data="aboutmanu_tac")
                     ],
-                    [
-                        InlineKeyboardButton(text="🔆 Perintah bot", callback_data="aboutmanu_howto")
-                    ],
                     [   
                         InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_back")],
                 ]
@@ -408,7 +405,7 @@ def DaisyX_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(text="Basic", callback_data="aboutmanu_permis"),
-                        InlineKeyboardButton(text="Advanced", url="https://t.me/nothingspecialonhere/10"),
+                        InlineKeyboardButton(text="Advanced", callback_data="aboutmanu_advanced"),
                     ],
                     [
                         InlineKeyboardButton(text="Fun", url="https://t.me/nothingspecialonhere/10"),
@@ -442,19 +439,54 @@ def DaisyX_about_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(text="Delete", callback_data="aboutmanu_hapus"),
-                        InlineKeyboardButton(text="Mute", callback_data="aboutmanu_bisu"),
-                        InlineKeyboardButton(text="Rules",callback_data="aboutmanu_rules")
+                        InlineKeyboardButton(text="Filters", callback_data="aboutmanu_filters"),
+                        InlineKeyboardButton(text="Mute",callback_data="aboutmanu_bisu"),
                     ],
                     [
+                        InlineKeyboardButton(text="Rules", callback_data="aboutmanu_rules"),
                         InlineKeyboardButton(text="Tag", callback_data="aboutmanu_tag"),
                         InlineKeyboardButton(text="Warns", callback_data="aboutmanu_warns"),
                         InlineKeyboardButton(text="Welcome",callback_data="aboutmanu_welcome")
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_back")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
                 ]
             ),
-        )    
+        )
+    elif query.data == "aboutmanu_advanced":
+        query.message.edit_text(
+            text=f"*Advanced Commands*"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="Approve", callback_data="aboutmanu_approve"),
+                        InlineKeyboardButton(text="Backups", callback_data="aboutmanu_backups"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Channel", callback_data="aboutmanu_channel"),
+                        InlineKeyboardButton(text="Disable", callback_data="aboutmanu_disable"),
+                        InlineKeyboardButton(text="Federasi", callback_data="aboutmanu_federasi"),   
+                    ],
+                    [
+                        InlineKeyboardButton(text="F-Subs", callback_data="aboutmanu_fsubs"),
+                        InlineKeyboardButton(text="Info", callback_data="aboutmanu_infoo"),
+                        InlineKeyboardButton(text="Koneksi", callback_data="aboutmanu_koneksi"),
+                        InlineKeyboardButton(text="Blok",callback_data="aboutmanu_blok")
+                    ],
+                    [
+                        InlineKeyboardButton(text="Md Malam", callback_data="aboutmanu_malam"),
+                        InlineKeyboardButton(text="Poll", callback_data="aboutmanu_poll"),
+                        InlineKeyboardButton(text="Notes",callback_data="aboutmanu_notes")
+                        InlineKeyboardButton(text="Shield",callback_data="aboutmanu_shield")
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                ]
+            ),
+        )        
     elif query.data == "aboutmanu_admin":
         query.message.edit_text(
             text=f"*{dispatcher.bot.first_name} Is the redisigned version of Daisy and Naruto for the best performance.*"
@@ -561,6 +593,20 @@ def DaisyX_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
             ),
         )
+    elif query.data == "aboutmanu_filters":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
     elif query.data == "aboutmanu_bisu":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
@@ -630,7 +676,189 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
             ),
-        )      
+        )
+    elif query.data == "aboutmanu_approve":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_backups":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        ) 
+    elif query.data == "aboutmanu_channel":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_disable":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_federasi":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_fsubs":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_infoo":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_koneksi":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_blok":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_malam":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_poll":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_notes":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
+    elif query.data == "aboutmanu_shield":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\nIf you are getting a message saying:"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )            
     elif query.data == "aboutmanu_tac":
         query.message.edit_text(
             text=f"<b> ｢ Terms and Conditions 」</b>\n"
