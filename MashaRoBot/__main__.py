@@ -75,12 +75,12 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hai yang disana! 
-[Grup Manajer](https://t.me/GrupManajerBot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
+[Rosi](https://t.me/GrupManajerBot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
  
 ❓ *APA PERINTAHNYA?* ❓
-Tekan /help untuk *melihat semua perintah* dan bagaimana mereka bekerja! 
+Tekan Bantuan untuk *melihat semua perintah* dan bagaimana mereka bekerja! 
 """
 
 buttons = [
@@ -404,12 +404,12 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Basic", callback_data="aboutmanu_permis"),
-                        InlineKeyboardButton(text="Advanced", callback_data="aboutmanu_advanced"),
+                        InlineKeyboardButton(text="Basic 📕", callback_data="aboutmanu_permis"),
+                        InlineKeyboardButton(text="Advanced 📗", callback_data="aboutmanu_advanced"),
                     ],
                     [
-                        InlineKeyboardButton(text="Fun", url="https://t.me/nothingspecialonhere/10"),
-                        InlineKeyboardButton(text="Tools", url="https://t.me/nothingspecialonhere/10"),   
+                        InlineKeyboardButton(text="Fun 📘", callback_data="aboutmanu_fun"),
+                        InlineKeyboardButton(text="Tools 📙", callback_data="aboutmanu_alat"),   
                     ],
                     [
                         InlineKeyboardButton(text="➕Bantuan Lengkap➕",callback_data="help_back")
@@ -428,7 +428,7 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Admin", callback_data="__mod_name__ = "ᴀᴅᴍɪɴ⚜️"),
+                        InlineKeyboardButton(text="Admin", callback_data="aboutmanu_admin"),
                         InlineKeyboardButton(text="AntiFlood", callback_data="aboutmanu_antiflood"),
                         InlineKeyboardButton(text="Banned", callback_data="aboutmanu_banned"),
                     ],
@@ -486,7 +486,77 @@ def DaisyX_about_callback(update, context):
                         InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
                 ]
             ),
-        )        
+        )
+    elif query.data == "aboutmanu_fun":
+        query.message.edit_text(
+            text=f"*Fun Commands*"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="Animasi", callback_data="aboutmanu_animasi"),
+                        InlineKeyboardButton(text="Anime", callback_data="aboutmanu_anime"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Cricket", callback_data="aboutmanu_kriket"),
+                        InlineKeyboardButton(text="Chatbot", callback_data="aboutmanu_chatbot"),   
+                        InlineKeyboardButton(text="Film", callback_data="aboutmanu_film"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Font", callback_data="aboutmanu_font"),
+                        InlineKeyboardButton(text="Logo", callback_data="aboutmanu_logo"),
+                        InlineKeyboardButton(text="Musik",callback_data="aboutmanu_musik"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Random", callback_data="aboutmanu_random"),
+                        InlineKeyboardButton(text="Youtube", callback_data="aboutmanu_youtube")
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_alat":
+        query.message.edit_text(
+            text=f"*Fun Commands*"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="Country", callback_data="aboutmanu_negara"),
+                        InlineKeyboardButton(text="Extras", callback_data="aboutmanu_ekstra"),
+                        InlineKeyboardButton(text="English", callback_data="aboutmanu_english"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Github", callback_data="aboutmanu_github"),
+                        InlineKeyboardButton(text="Google", callback_data="aboutmanu_google"),   
+                        InlineKeyboardButton(text="Gps", callback_data="aboutmanu_gps"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Grammar", callback_data="aboutmanu_grammar"),
+                        InlineKeyboardButton(text="G-Trans", callback_data="aboutmanu_gtrans"),
+                        InlineKeyboardButton(text="Json",callback_data="aboutmanu_json"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Math", callback_data="aboutmanu_math"),
+                        InlineKeyboardButton(text="Report", callback_data="aboutmanu_report")
+                        InlineKeyboardButton(text="Secure", callback_data="aboutmanu_secure")
+                    ],
+                    [
+                        InlineKeyboardButton(text="Time", callback_data="aboutmanu_time"),
+                        InlineKeyboardButton(text="Tts", callback_data="aboutmanu_tts"),
+                        InlineKeyboardButton(text="Weather", callback_data="aboutmanu_cuaca"),
+                        InlineKeyboardButton(text="Zipper", callback_data="aboutmanu_zipper")
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                ]
+            ),
+        )                
     elif query.data == "aboutmanu_admin":
         query.message.edit_text(
             text=f"*{dispatcher.bot.first_name} Is the redisigned version of Daisy and Naruto for the best performance.*"
