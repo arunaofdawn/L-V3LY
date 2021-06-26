@@ -556,17 +556,41 @@ def DaisyX_about_callback(update, context):
         )                
     elif query.data == "aboutmanu_admin":
         query.message.edit_text(
-            text=f"*{dispatcher.bot.first_name} Is the redisigned version of Daisy and Naruto for the best performance.*"
-            f"\n\nBased on [Daisy](https://github.com/inukaasith/daisy) + [Naruto](https://github.com/imjanindu/narutorobot)."
-            f"\n\n{dispatcher.bot.first_name}'s source code was written by InukaASiTH and Imjanindu"
-            f"\n\nIf Any Question About {dispatcher.bot.first_name}, \nLet Us Know At @{SUPPORT_CHAT}.",
+            text=f"*Bantuan untuk ️modul Admin*"
+            f"\n\n*Admin rights:*"
+            f"\n❍ /pin: reply pesan untuk disematkan, tambahkan 'loud' atau 'notify' untuk memberikan pemberitahuan kepada anggota."
+            f"\n❍ /unpin: melepas pin pesan yang saat ini disematkan."
+            f"\n❍ /invitelink: mendapat tautan grup."
+            f"\n❍ /promote: mempromosikan pengguna"
+            f"\n❍ /demote: menurunkan pengguna."
+            f"\n❍ /title [title]: menetapkan judul khusus untuk admin yang dipromosikan bot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
+                [
+                    [
+                        InlineKeyboardButton(text="Manage", callback_data="aboutmanu_manage"),
+                        InlineKeyboardButton(text="Cleaner", callback_data="aboutmanu_cleaner"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                ]
             ),
         )
-
+    elif query.data == "aboutmanu_manage":
+        query.message.edit_text(
+            text=f"*Perintah Dasar*"
+            f"\n\n👮🏻Tersedia untuk Admin"
+            f"\n🕵🏻Tersedia untuk Semua Anggota"
+            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
+            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
+            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+            ),
+        )
     elif query.data == "aboutmanu_antiflood":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
