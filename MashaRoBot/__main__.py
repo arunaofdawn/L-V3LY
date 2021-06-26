@@ -87,7 +87,7 @@ buttons = [
     [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/GrupManajerBot?startgroup=start"),
     ],
     [   InlineKeyboardButton(text="🔊 Channel", url="https://t.me/arunasupportbot"),
-        InlineKeyboardButton(text="Informasi 💬", callback_data="aboutmanu_),
+        InlineKeyboardButton(text="Informasi 💬",callback_data="aboutmanu_"),
     ],
     [    
         InlineKeyboardButton(text="🔧 Bantuan 🔧",callback_data="aboutmanu_howto"
