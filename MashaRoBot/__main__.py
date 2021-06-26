@@ -400,12 +400,12 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Basic 📕", callback_data="aboutmanu_permis"),
-                        InlineKeyboardButton(text="Advanced 📗", callback_data="aboutmanu_advanced"),
+                        InlineKeyboardButton(text="Basic📕", callback_data="aboutmanu_permis"),
+                        InlineKeyboardButton(text="Advanced📗", callback_data="aboutmanu_advanced"),
                     ],
                     [
-                        InlineKeyboardButton(text="Fun 📘", callback_data="aboutmanu_fun"),
-                        InlineKeyboardButton(text="Tools 📙", callback_data="aboutmanu_alat"),   
+                        InlineKeyboardButton(text="Fun📘", callback_data="aboutmanu_fun"),
+                        InlineKeyboardButton(text="Tools📙", callback_data="aboutmanu_alat"),   
                     ],
                     [
                         InlineKeyboardButton(text="📚Bantuan Lengkap📚",callback_data="help_back")
@@ -569,7 +569,7 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Manage", callback_data="aboutmanu_manage"),
+                        InlineKeyboardButton(text="Manage", callback_data="aboutmanu_amanage"),
                         InlineKeyboardButton(text="Cleaner", callback_data="aboutmanu_cleaner"),
                     ],
                     [   
@@ -577,66 +577,122 @@ def DaisyX_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "aboutmanu_manage":
+    elif query.data == "aboutmanu_amanage":
         query.message.edit_text(
-            text=f"*Perintah Dasar*"
-            f"\n\n👮🏻Tersedia untuk Admin"
-            f"\n🕵🏻Tersedia untuk Semua Anggota"
-            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
-            f"\n<Code>You must be this chat administrator to perform this action!</code>"
-            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
-            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            text=f"*Bantuan untuk ️modul Admin*"
+            f"\n\n*Manage:*
+            f"\n\n❍ /admincache: refresh daftar admin."
+            f"\n❍ /antispam [on/off]: Akan mengaktifkan teknologi antispam kami atau mengembalikan pengaturan Anda saat ini."
+            f"\n❍ /setgtitle [new title]: Mengatur judul obrolan baru di grup Anda."
+            f"\n❍ /setgpic: Sebagai balasan ke file atau foto untuk mengatur gambar profil grup!"
+            f"\n❍ /delgpic: Sama seperti di atas tetapi untuk menghapus foto profil grup."
+            f"\n❍ /setsticker: Sebagai balasan untuk beberapa stiker untuk ditetapkan sebagai set stiker grup!"
+            f"\n❍ /setdescription [deskripsi]: Mengatur deskripsi obrolan baru di grup.",
             parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_admin")]]
+            ),
+        )
+    elif query.data == "aboutmanu_cleaner":
+        query.message.edit_text(
+            text=f"*Bantuan untuk ️modul Admin*"
+            f"\n\n*Cleaner:*"
+            f"\n❍ /zombies: Temukan semua akun yang dihapus di grup Anda."
+            f"\n❍ /zombies clean: Hapus semua akun yang dihapus dari grup Anda.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_admin")]]
             ),
         )
     elif query.data == "aboutmanu_antiflood":
         query.message.edit_text(
-            text=f"*Perintah Dasar*"
-            f"\n\n👮🏻Tersedia untuk Admin"
-            f"\n🕵🏻Tersedia untuk Semua Anggota"
-            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
-            f"\n\n🕵🏻  `/help` anda dapat melihat atau mengelola semua pengaturan Bot di pm"
-            f"\n\n👮🏻  `/ban` anda dapat memblokir pengguna dari grup tanpa memberinya kemungkinan untuk bergabung kembali menggunakan tautan grup"
-            f"\n\n👮🏻  `/mute` menempatkan pengguna dalam mode hanya-membaca. Dia bisa membaca tetapi tidak bisa mengirim pesan apapun"
-            f"\n\n👮🏻  `/kick` menendang pengguna dari grup, memberinya kemungkinan untuk bergabung kembali menggunakan tautan grup"
-            f"\n\n👮🏻  `/unban` menghapus blokiran pengguna dari grup dalam daftar blokiran, memberinya kemungkinan untuk bergabung kembali dengan tautan grup"
-            f"\n\n👮🏻  `/info` memberikan informasi tentang pengguna"
-            f"\n👮🏻  `/whois` mirip dengan `/info` tetapi lebih simpel"
-            f"\n\n◽️ `/admins` memberikan Daftar lengkap admin grup",
+            text=f"*Bantuan untuk modul AntiFlood*"
+            f"\n*Commands*"
+            f"\n❍ /flood: Dapatkan pengaturan pengendalian pesan banjir saat ini"
+            f"\n❍ /setflood [int/no/off']: mengaktifkan atau menonaktifkan pengendalian pesan banjir"
+            f"\n❍ /setfloodmode [ban/kick/mute/tban/tmute] [nilai]: Tindakan yang harus dilakukan ketika pengguna telah melampaui batas pesan banjir. ban/tendangan/bisu/tmute/tban",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
+                [
+                    [
+                        InlineKeyboardButton(text="About", callback_data="aboutmanu_flood"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_flood":
+        query.message.edit_text(
+            text=f"*Bantuan untuk ️modul AntiFlood*"
+            f"\n\n*About:*"
+            f"\nAntiflood memungkinkan Anda untuk mengambil tindakan pada pengguna yang mengirim lebih dari x pesan berturut-turut. Melebihi banjir yang ditetapkan akan mengakibatkan pembatasan pengguna itu. Ini akan membisukan pengguna jika mereka mengirim lebih dari 10 pesan berturut-turut, bot diabaikan."
+            f"\n\n*Catatan:*"
+            f"\n • Nilai harus diisi untuk tban dan tmute!!"
+            f"\n Ini bisa berupa:"
+            f"\n 5m = 5 menit"
+            f"\n 6h = 6 jam"
+            f"\n 3d = 3 hari"
+            f"\n 1w = 1 minggu"
+            f"\n\nContoh:"
+            f"\n❍ /setflood 5"
+            f"\n /setfloodmode tmute 2h:"
+            f"\nini akan membisukan pengguna selama 2 jam jika mengirim 5 pesan sekaligus."
+            f"\n\n❍ /setflood off: menonaktifkan pengendalian banjir",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_antiflood")]]
             ),
         )
     elif query.data == "aboutmanu_banned":
         query.message.edit_text(
-            text="*Perintah Lanjutan*"
-            "\n\n🔘Tersedia untuk Admin"
-            "\n\n*MANAJEMEN PERINGATAN*"
-            "\n👮🏻  `/warn` memberikan peringatan ke pengguna"
-            "\n👮🏻  `/resetwarn` balas ke pengguna untuk menghapus warn"
-            "\n👮🏻  `/warns` memungkinkan anda melihat dan mengelola peringatan pengguna"
-            "\n👮🏻  `/addwarn [kata kunci]` balas ke pesan untuk mengatur filter peringatan pada kata kunci tertentu."
-            "\n\n🛃 `/del` menghapus pesan yang dipilih"
-            "\n🛃 `/purge` menghapus antara pesan yang dipilih sampai pesan saat ini"
-            "\n\n◽️  `/reports [on/off]` mengubah pengaturan laporan, atau melihat status saat ini."
-            "\n\n👮🏻 `/antispam [on/off]` Mengatur keamanan antispam di grup. Ini akan membantu melindungi Anda dan grup Anda dengan menghapus pembanjir spam secepat mungkin",
+            text="*Bantuan untuk moduk Banned*"
+            f"\n\n*Commands:*"
+            f"\n❍ /punchme: meninju pengguna yang menggunakan perintah ini"
+            f"\n\n*Khusus Admin:*"
+            f"\n❍ /ban [userhandle]: melarang pengguna.(melalui tag atau balasan)"
+            f"\n❍ /sban [userhandle]: Diam-diam melarang pengguna. Menghapus perintah, Membalas pesan dan tidak membalas.(melalui tag atau balasan)"
+            f"\n❍ /tban [userhandle] x [m/h/d]: melarang pengguna untuk x waktu yang ditentukan(melalui tag atau balasan)."
+            f"\n❍ /unban [userhandle]: membatalkan pemblokiran pengguna(melalui tag atau balasan)"
+            f"\n❍ /punch [userhandle]: Mengeluarkan pengguna dari grup(melalui tag atau reply).",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali ke bantuan", callback_data="aboutmanu_permis")]]
+                [
+                    [
+                        InlineKeyboardButton(text="About", callback_data="aboutmanu_larang"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_larang":
+        query.message.edit_text(
+            text=f"*Bantuan untuk ️modul Banned*"
+            f"\n*About:*"
+            f"\nm = menit"
+            f"\nh = jam"
+            f"\nd = hari"
+            f"\n\n*Contoh:*"
+            f"\n❍ /tban @username 1d: ini akan melarang @username selama 1 hari.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_banned")]]
             ),
         )  
     elif query.data == "aboutmanu_blacklist":
         query.message.edit_text(
-            text=f"*Perintah Dasar*"
-            f"\n\n👮🏻Tersedia untuk Admin"
-            f"\n🕵🏻Tersedia untuk Semua Anggota"
-            f"\n\n👮🏻 `/admincache` memperbarui daftar Admin dan hak istimewanya"
-            f"\n<Code>You must be this chat administrator to perform this action!</code>"
-            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
-            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            text=f"*Bantuan untuk modul Blacklist*"
+            f"\*Commands*"
+            f"\n /blacklist: Melihat kata-kata yang masuk daftar hitam saat ini."
+            f"\n\n*Khusus Admin:*"
+            f"\n❍ /addblacklist [pemicu]: Menambahkan pemicu ke daftar hitam.
+            f"\n❍ /unblacklist [pemicu]: Hapus pemicu dari daftar hitam. 
+            f"\n❍ /blacklistmode [off/del/warn/ban/kick/mute/tban/tmute]: Tindakan yang dilakukan ketika seseorang mengirim kata-kata yang masuk daftar hitam.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
