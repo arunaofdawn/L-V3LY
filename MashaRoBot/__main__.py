@@ -75,7 +75,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hai yang disana! 
-[Rosi](https://t.me/GrupManajerBot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
+[Rosi](https://t.me/RosiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
  
 👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
  
@@ -86,12 +86,11 @@ Tekan Bantuan untuk *melihat semua perintah* dan bagaimana mereka bekerja!
 buttons = [
     [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/GrupManajerBot?startgroup=start"),
     ],
-    [   InlineKeyboardButton(text="👥 Grup", url="https://t.me/nothingspecialonhere/10"),
-        InlineKeyboardButton(text="Channel 📢", url="https://t.me/nothingspecialonhere/10"),
+    [   InlineKeyboardButton(text="🔊 Channel", url="https://t.me/arunasupportbot"),
+        InlineKeyboardButton(text="Informasi 💬", callback_data="aboutmanu_),
     ],
-    [
-        InlineKeyboardButton(text="🔧 Bantuan",callback_data="aboutmanu_howto"),
-        InlineKeyboardButton(text="Informasi 💬",callback_data="aboutmanu_"),   
+    [    
+        InlineKeyboardButton(text="🔧 Bantuan 🔧",callback_data="aboutmanu_howto"
         ),
     ],
 ]
@@ -367,7 +366,7 @@ def DaisyX_about_callback(update, context):
     query = update.callback_query
     if query.data == "aboutmanu_":
         query.message.edit_text(
-            text=f"*Grup Manager* adalah Bot yang copas penampilan dari Grup Help dan hasil cloning dari beberapa repo manager yang ada, daring sejak 23 april 2020 dan terus diperbarui!"
+            text=f"*Rosi* adalah Bot cloning yang dikembangkan dari beberapa repo manager yang ada, daring sejak 23 april 2020 dan terus diperbarui!"
             f"\n\n*Versi Bot:* _2.0_"
             f"\n\nTerima kasih kepada *SaitamaRobot*, *Masha* dan semua manajer peladen lainnya, semua admin bot, semua *pendukung*, dan semua pengguna yang membantu kami dalam mengelola, *donatur*, dan semua pengguna yang melaporkan kesalahan atau fitur baru kepada kami."
             f"\n\nJuga terima kasih kepada *semua grup* yang menggunakan bot kami, kami terus belajar agar tidak copas doang!"
@@ -461,14 +460,14 @@ def DaisyX_about_callback(update, context):
                     [
                         InlineKeyboardButton(text="Approve", callback_data="aboutmanu_approve"),
                         InlineKeyboardButton(text="Backups", callback_data="aboutmanu_backups"),
-                    ],
-                    [
                         InlineKeyboardButton(text="Channel", callback_data="aboutmanu_channel"),
-                        InlineKeyboardButton(text="Disable", callback_data="aboutmanu_disable"),
-                        InlineKeyboardButton(text="Federasi", callback_data="aboutmanu_federasi"),   
                     ],
                     [
-                        InlineKeyboardButton(text="F-Subs", callback_data="aboutmanu_fsubs"),
+                        InlineKeyboardButton(text="Disable", callback_data="aboutmanu_disable"),
+                        InlineKeyboardButton(text="Federasi", callback_data="aboutmanu_federasi"),
+                        InlineKeyboardButton(text="F-Subs", callback_data="aboutmanu_fsubs"),   
+                    ],
+                    [
                         InlineKeyboardButton(text="Info", callback_data="aboutmanu_infoo"),
                         InlineKeyboardButton(text="Koneksi", callback_data="aboutmanu_koneksi"),
                         InlineKeyboardButton(text="Blok",callback_data="aboutmanu_blok"),
