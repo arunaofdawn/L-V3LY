@@ -474,12 +474,12 @@ def DaisyX_about_callback(update, context):
                         InlineKeyboardButton(text="F-Subs", callback_data="aboutmanu_fsubs"),
                         InlineKeyboardButton(text="Info", callback_data="aboutmanu_infoo"),
                         InlineKeyboardButton(text="Koneksi", callback_data="aboutmanu_koneksi"),
-                        InlineKeyboardButton(text="Blok",callback_data="aboutmanu_blok")
+                        InlineKeyboardButton(text="Blok",callback_data="aboutmanu_blok"),
                     ],
                     [
                         InlineKeyboardButton(text="Md Malam", callback_data="aboutmanu_malam"),
                         InlineKeyboardButton(text="Poll", callback_data="aboutmanu_poll"),
-                        InlineKeyboardButton(text="Notes",callback_data="aboutmanu_notes")
+                        InlineKeyboardButton(text="Notes",callback_data="aboutmanu_notes"),
                         InlineKeyboardButton(text="Shield",callback_data="aboutmanu_shield")
                     ],
                     [   
