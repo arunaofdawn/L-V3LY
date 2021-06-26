@@ -540,8 +540,8 @@ def DaisyX_about_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(text="Math", callback_data="aboutmanu_math"),
-                        InlineKeyboardButton(text="Report", callback_data="aboutmanu_report")
-                        InlineKeyboardButton(text="Secure", callback_data="aboutmanu_secure")
+                        InlineKeyboardButton(text="Report", callback_data="aboutmanu_report"),
+                        InlineKeyboardButton(text="Secure", callback_data="aboutmanu_secure"),
                     ],
                     [
                         InlineKeyboardButton(text="Time", callback_data="aboutmanu_time"),
