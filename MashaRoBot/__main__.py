@@ -602,7 +602,7 @@ def DaisyX_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
             ),
-       )
+        )
     elif query.data == "aboutmanu_warns":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
