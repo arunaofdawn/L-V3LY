@@ -928,26 +928,12 @@ def DaisyX_about_callback(update, context):
             f"\n❍ /addwarn (kata kunci) (repy pesan): mengatur filter peringatan pada kata kunci tertentu."
             f"\n❍ /nowarn (kata kunci): menghentikan filter peringatan."
             f"\n❍ /warnlimit (jumlah): mengatur batas peringatan."
-            f"\n❍ /strongwarn (on/yes): Jika disetel ke 'on', pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick.",
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="About", callback_data="aboutmanu_ingat"),
-                    ],
-                    [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
-                ]
-            ),
-        )
-    elif query.data == "aboutmanu_ingat":
-        query.message.edit_text(
-            text=f"*Bantuan untuk modul Warns:*"
+            f"\n❍ /strongwarn (on/yes): Jika disetel ke 'on', pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick."
             f"\n\n*About:*"
             f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: addwarn ”insyekur” jangan insyekur mulu. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
+                [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_permis")]]
             ),
         )
     elif query.data == "aboutmanu_welcome":
