@@ -778,8 +778,8 @@ def DaisyX_about_callback(update, context):
             f"\n\n*Commands:*"
             f"\n❍ /filters: Melihat daftar semua filter aktif yang disimpan dalam obrolan."
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /filter [kata kunci] [balas pesan]: Tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu setiap kali "kata kunci" disebutkan. Jika Anda membalas stiker dengan kata kunci, bot akan membalas dengan stiker itu."
-            f"\n❍ /stop [kata kunci]: Hentikan filter itu."
+            f"\n❍ /filter (kata kunci)(reply pesan): Tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu setiap kali "kata kunci" disebutkan. Jika Anda membalas ke stiker dengan kata kunci, bot akan membalas dengan stiker itu."
+            f"\n❍ /stop (kata kunci): Hentikan filter itu."
             f"\n\n*Khusus Owner:*"
             f"\n❍ /removeallfilters: Hapus semua filter obrolan sekaligus.",
             parse_mode=ParseMode.MARKDOWN,
@@ -799,7 +799,7 @@ def DaisyX_about_callback(update, context):
             text=f"*Bantuan untuk modul Filters:*"
             f"\n\n*About*"
             f"\n*CATATAN:*"
-            f"\n- Semua kata kunci filter dalam huruf kecil. Jika Anda ingin kata kunci Anda menjadi kalimat, gunakan tanda kutip. misalnya: /filter "hey there" Bagaimana kabarmu?"
+            f"\n- Semua kata kunci filter dalam huruf kecil. Jika Anda ingin kata kunci Anda menjadi kalimat, gunakan tanda kutip. misalnya: /filter "hai yang disana" Bagaimana kabarmu?"
             f"\n- Jika ingin membuat filter dengan balasan yang berbeda, gunakan %%% untuk mendapatkan balasan acak dari setiap filter yang disebutkan."
             f"\n*Contoh:*"
             f"\n /filter "nama filter"
@@ -816,8 +816,8 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_fmark":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Filters:*"
-            f"\n\n*Markdownhelp:*"
+            text=f"<b>Bantuan untuk modul Filters:</b>"
+            f"\n\n<b>Markdownhelp:</b>*"
             f"\nMarkdown adalah alat pemformatan yang sangat kuat yang didukung oleh telegram."
             f"\nRosi memiliki beberapa peningkatan, untuk memastikan bahwa pesan yang disimpan diurai dengan benar, dan juga memungkinkan Anda membuat tombol(button)."
             f"\n\n• _italic_: membungkus teks dengan tanda _ akan menghasilkan teks miring."
@@ -833,7 +833,7 @@ def DaisyX_about_callback(update, context):
             f"\n[dua](buttonurl://google.com:same)"
             f"\nIni akan membuat dua tombol dalam satu baris, bukan satu tombol per baris."
             f"\n\nIngatlah bahwa pesan Anda HARUS berisi beberapa teks selain hanya sebuah tombol!",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_filters")]]
             ),
@@ -877,7 +877,7 @@ def DaisyX_about_callback(update, context):
             f"\n\n*Commands:*"
             f"\n❍ /rules: dapatkan aturan untuk obrolan ini."
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /setrules [rules]: tetapkan aturan untuk obrolan ini."
+            f"\n❍ /setrules (rules): tetapkan aturan untuk obrolan ini."
             f"\n❍ /clearrules: hapus aturan untuk obrolan ini.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -990,8 +990,8 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_datang":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Welcome:*"
-            f"\n\n*About & Markdown*"
+            text=f"<b>Bantuan untuk modul Welcome:</b>"
+            f"\n\n<b>About & Markdown</b>*"
             f"\n❍ Pesan Welcome/Goodbye di grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda ingin pesan dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel berikut:"
             f"\n\n • {first}: ini mewakili nama depan pengguna"
             f"\n • {last}: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
@@ -1001,12 +1001,12 @@ def DaisyX_about_callback(update, context):
             f"\n • {id}: ini mewakili id ​​pengguna."
             f"\n • {count}: ini mewakili nomor anggota pengguna."
             f"\n • {chatname}: ini mewakili nama grup anda."
-            f"\n\n❍ Setiap variabel HARUS diapit oleh {} untuk diganti. Pesan welcome juga mendukung *Markdown*, sehingga Anda dapat membuat elemen apa pun menjadi *Bold*/_italic_/`code`/[link](https://example.com)."
+            f"\n\n❍ Setiap variabel HARUS diapit oleh {} untuk diganti. Pesan welcome juga mendukung *Markdown*, sehingga Anda dapat membuat elemen apa pun menjadi Bold/italic/code/link."
             f"\n\n❍ Button juga didukung dalam hal ini, sehingga Anda dapat membuat sambutan Anda terlihat luar biasa dengan beberapa tombol intro yang bagus."
             f"\n\n❍ Untuk membuat tombol yang menautkan ke rules Anda, gunakan ini: `[rules](buttonurl://t.me/RosoManage_bot?start=group_id)`. Cukup ganti group_id dengan id grup Anda, yang dapat diperoleh menggunakan perintah /id, dan Anda siap melakukannya."
             f"\n\n❍ Perhatikan bahwa id grup biasanya didahului dengan tanda - (min); ini wajib, jadi tolong jangan dihapus."
             f"\n\n❍ Anda bahkan dapat mengatur gambar/gifs/video/pesan suara sebagai pesan welcome datang dengan membalas media yang diinginkan, dengan menggunakan `/setwelcome`.",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
             ),
