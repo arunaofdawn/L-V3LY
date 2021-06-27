@@ -690,8 +690,8 @@ def DaisyX_about_callback(update, context):
             f"\*Commands*"
             f"\n /blacklist: Melihat kata-kata yang masuk daftar hitam saat ini."
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /addblacklist [pemicu]: Menambahkan pemicu ke daftar hitam.
-            f"\n❍ /unblacklist [pemicu]: Hapus pemicu dari daftar hitam. 
+            f"\n❍ /addblacklist [pemicu]: Menambahkan pemicu ke daftar hitam."
+            f"\n❍ /unblacklist [pemicu]: Hapus pemicu dari daftar hitam." 
             f"\n❍ /blacklistmode [off/del/warn/ban/kick/mute/tban/tmute]: Tindakan yang dilakukan ketika seseorang mengirim kata-kata yang masuk daftar hitam.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
