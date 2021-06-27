@@ -940,7 +940,7 @@ def DaisyX_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "aboutmanu_ingat":
+    elif query.data == "aboutmanu_pilter":
         query.message.edit_text(
             text=f"<b>Bantuan untuk modul Warns:</b>"
             f"\n\n<b>About:</b>"
