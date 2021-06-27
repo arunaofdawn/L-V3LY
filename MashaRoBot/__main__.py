@@ -942,19 +942,19 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_ingat":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Warns:*"
-            f"\n\n*About:*"
-            f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: `/addwarn ”insyekur” jangan insyekur mulu`. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
-            parse_mode=ParseMode.MARKDOWN,
+            text=f"<b>Bantuan untuk modul Warns:</b>"
+            f"\n\n<b>About:</b>"
+            f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: addwarn ”insyekur” jangan insyekur mulu. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
             ),
         )
     elif query.data == "aboutmanu_welcome":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Welcome:*"
-            f"\n\n*Khusus Admin:*"
-            f"\n\n*Welcome:*"
+            text=f"<b>Bantuan untuk modul Welcome:</b>"
+            f"\n\n<b>Khusus Admin:*"
+            f"\n\n<b>Welcome:</b>"
             f"\n❍ /welcome (on/off): mengaktifkan/menonaktifkan pesan selamat datang."
             f"\n❍ /welcome: menunjukkan pengaturan selamat datang saat ini."
             f"\n❍ /welcome noformat: menunjukkan pengaturan selamat datang saat ini, tanpa pemformatan - berguna untuk mendaur ulang pesan selamat datang Anda!"
@@ -962,7 +962,7 @@ def DaisyX_about_callback(update, context):
             f"\n❍ /resetwelcome: reset ke pesan selamat datang default."
             f"\n❍ /cleanwelcome (on/off): menghapus pesan selamat datang sebelumnya untuk menghindari spam chat."
             f"\n\n❍ /welcomemutehelp: memberikan informasi tentang penyambutan bisu.",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -976,13 +976,13 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_gudbay":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Welcome:*"
-            f"\n\n*Goodbye:*"
+            text=f"<b>Bantuan untuk modul Welcome:</b>"
+            f"\n\n<b>Goodbye:</b>"
             f"\n❍ /setgoodbye: mengatur pesan selamat tinggal secara default untuk anggota yang keluar."
             f"\n❍ /setgoodbye (teks): mengatur pesan selamat tinggal khusus. Jika digunakan untuk membalas media, maka media tersebut akan diatur sebagai pesan selamat tinggal."
             f"\n❍ /resetgoodbye: reset ke pesan selamat tinggal default."
             f"\n❍ /cleanservice (on/off): menghapus pesan layanan/tanda anggota baru yang bergabung dan keluar.",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
             ),
@@ -992,19 +992,19 @@ def DaisyX_about_callback(update, context):
             text=f"<b>Bantuan untuk modul Welcome:</b>"
             f"\n\n<b>About & Markdown</b>*"
             f"\n❍ Pesan Welcome/Goodbye di grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda ingin pesan dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel berikut:"
-            f"\n\n • {first}: ini mewakili nama depan pengguna"
-            f"\n • {last}: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
-            f"\n • {fullname}: ini mewakili nama lengkap pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
-            f"\n • {username}: ini mewakili username pengguna. Default untuk menyebutkan nama depan pengguna jika tidak memiliki nama pengguna."
-            f"\n • {mention}: ini hanya menyebut pengguna - menandai mereka dengan nama depan mereka."
-            f"\n • {id}: ini mewakili id ​​pengguna."
-            f"\n • {count}: ini mewakili nomor anggota pengguna."
-            f"\n • {chatname}: ini mewakili nama grup anda."
-            f"\n\n❍ Setiap variabel HARUS diapit oleh {} untuk diganti. Pesan welcome juga mendukung *Markdown*, sehingga Anda dapat membuat elemen apa pun menjadi Bold/italic/code/link."
+            f"\n\n • <code>{first}</code>: ini mewakili nama depan pengguna"
+            f"\n • <code>{last}</code>: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
+            f"\n • <code>{fullname}</code>: ini mewakili nama lengkap pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
+            f"\n • <code>{username}</code>: ini mewakili username pengguna. Default untuk menyebutkan nama depan pengguna jika tidak memiliki nama pengguna."
+            f"\n • <code>{mention}</code>: ini hanya menyebut pengguna - menandai mereka dengan nama depan mereka."
+            f"\n • <code>{id}</code>: ini mewakili id ​​pengguna."
+            f"\n • <code>{count}</code>: ini mewakili nomor anggota pengguna."
+            f"\n • <code>{chatname}</code>: ini mewakili nama grup anda."
+            f"\n\n❍ Setiap variabel HARUS diapit oleh {} untuk diganti. Pesan welcome juga mendukung <b>Markdown</b>, sehingga Anda dapat membuat elemen apa pun menjadi Bold/italic/code/link."
             f"\n\n❍ Button juga didukung dalam hal ini, sehingga Anda dapat membuat sambutan Anda terlihat luar biasa dengan beberapa tombol intro yang bagus."
-            f"\n\n❍ Untuk membuat tombol yang menautkan ke rules Anda, gunakan ini: `[rules](buttonurl://t.me/RosoManage_bot?start=group_id)`. Cukup ganti group_id dengan id grup Anda, yang dapat diperoleh menggunakan perintah /id, dan Anda siap melakukannya."
+            f"\n\n❍ Untuk membuat tombol yang menautkan ke rules Anda, gunakan ini: <code>[rules](buttonurl://t.me/RosoManage_bot?start=group_id)</code>. Cukup ganti group_id dengan id grup Anda, yang dapat diperoleh menggunakan perintah <code>/id</code>, dan Anda siap melakukannya."
             f"\n\n❍ Perhatikan bahwa id grup biasanya didahului dengan tanda - (min); ini wajib, jadi tolong jangan dihapus."
-            f"\n\n❍ Anda bahkan dapat mengatur gambar/gifs/video/pesan suara sebagai pesan welcome datang dengan membalas media yang diinginkan, dengan menggunakan `/setwelcome`.",
+            f"\n\n❍ Anda bahkan dapat mengatur gambar/gifs/video/pesan suara sebagai pesan welcome datang dengan membalas media yang diinginkan, dengan menggunakan <code>/setwelcome</code>.",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
