@@ -580,7 +580,7 @@ def DaisyX_about_callback(update, context):
     elif query.data == "aboutmanu_amanage":
         query.message.edit_text(
             text=f"*Bantuan untuk ️modul Admin*"
-            f"\n\n*Manage:*
+            f"\n\n*Manage:*"
             f"\n\n❍ /admincache: refresh daftar admin."
             f"\n❍ /antispam [on/off]: Akan mengaktifkan teknologi antispam kami atau mengembalikan pengaturan Anda saat ini."
             f"\n❍ /setgtitle [new title]: Mengatur judul obrolan baru di grup Anda."
