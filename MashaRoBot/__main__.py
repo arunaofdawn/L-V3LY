@@ -917,11 +917,11 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_warns":
         query.message.edit_text(
-            text=f"<b>Bantuan untuk modul Warns:</b>"
-            f"\n\n<b>Commands:</b>"
+            text=f"*Bantuan untuk modul Warns:*"
+            f"\n\n*Commands:*"
             f"\n❍ /warns (userhandle): melihat jumlah warn pengguna, dan alasan dari warn."
             f"\n❍ /warnlist: daftar semua filter peringatan saat ini."
-            f"\n\n<b>Khusus Admin:</b>"
+            f"\n\n*Khusus Admin:*"
             f"\n❍ /warn (userhandle): memperingatkan pengguna. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /dwarn (userhandle): memperingatkan pengguna dan menghapus pesan. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /resetwarn (userhandle): mengatur ulang peringatan untuk pengguna. Bisa juga digunakan sebagai balasan."
@@ -929,7 +929,7 @@ def DaisyX_about_callback(update, context):
             f"\n❍ /nowarn (kata kunci): menghentikan filter peringatan."
             f"\n❍ /warnlimit (jumlah): mengatur batas peringatan."
             f"\n❍ /strongwarn (on/yes): Jika disetel ke 'on', pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick.",
-            parse_mode=ParseMode.HTML,
+            parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -940,12 +940,12 @@ def DaisyX_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "aboutmanu_pilter":
+    elif query.data == "aboutmanu_ingat":
         query.message.edit_text(
-            text=f"<b>Bantuan untuk modul Warns:</b>"
-            f"\n\n<b>About:</b>"
+            text=f"*Bantuan untuk modul Warns:*"
+            f"\n\n*About:*"
             f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: addwarn ”insyekur” jangan insyekur mulu. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
-            parse_mode=ParseMode.HTML,
+            parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
             ),
