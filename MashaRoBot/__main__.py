@@ -975,8 +975,7 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_datang":
         query.message.edit_text(
-            text=f"Bantuan untuk modul Welcome:"
-            f"\n\nAbout & Markdown"
+            text=f"About & Markdown:"
             f"\n❍ Pesan Welcome/Goodbye di grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda ingin pesan dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel berikut:"
             f"\n\n • {first}: ini mewakili nama depan pengguna"
             f"\n • {last}: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
