@@ -778,7 +778,7 @@ def DaisyX_about_callback(update, context):
             f"\n\n<b>Commands:</b>"
             f"\n❍ /filters: Melihat daftar semua filter aktif yang disimpan dalam obrolan."
             f"\n\n<b>Khusus Admin:</b>"
-            f"\n❍ /filter (kata kunci × reply pesan): Tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu setiap kali "kata kunci" disebutkan. Jika Anda membalas ke stiker dengan kata kunci, bot akan membalas dengan stiker itu."
+            f"\n❍ /filter (kata kunci × reply pesan): Tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu setiap kali (kata kunci) disebutkan. Jika Anda membalas ke stiker dengan kata kunci, bot akan membalas dengan stiker itu."
             f"\n❍ /stop (kata kunci): Hentikan filter itu."
             f"\n\n<b>Khusus Owner:</b>"
             f"\n❍ /removeallfilters: Hapus semua filter obrolan sekaligus.",
@@ -799,7 +799,7 @@ def DaisyX_about_callback(update, context):
             text=f"*Bantuan untuk modul Filters:*"
             f"\n\n*About*"
             f"\n*CATATAN:*"
-            f"\n- Semua kata kunci filter dalam huruf kecil. Jika Anda ingin kata kunci Anda menjadi kalimat, gunakan tanda kutip. misalnya: /filter "hai yang disana" Bagaimana kabarmu?"
+            f"\n- Semua kata kunci filter dalam huruf kecil. Jika Anda ingin kata kunci Anda menjadi kalimat, gunakan tanda kutip. misalnya: /filter ”hai yang disana” Bagaimana kabarmu?"
             f"\n- Jika ingin membuat filter dengan balasan yang berbeda, gunakan %%% untuk mendapatkan balasan acak dari setiap filter yang disebutkan."
             f"\n*Contoh:*"
             f"\n /filter "nama filter"
