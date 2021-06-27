@@ -750,7 +750,7 @@ def DaisyX_about_callback(update, context):
             text=f"*Bantuan untuk modul Blue text:*"
             f"\n\n*About:*"
             f"\nPembersih teks biru menghapus semua perintah yang dibuat-buat dan dikirim orang dalam obrolan Anda."
-            f"\n\n*Commands:*
+            f"\n\n*Commands:*"
             f"\n❍ /cleanblue (on/off): bersihkan perintah setelah mengirim."
             f"\n❍ /ignoreblue (kata): mencegah pembersihan otomatis dari perintah itu."
             f"\n❍ /unignoreblue (kata): hapus cegah pembersihan otomatis dari perintah itu."
