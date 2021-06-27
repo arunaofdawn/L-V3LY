@@ -720,12 +720,12 @@ def DaisyX_about_callback(update, context):
         query.message.edit_text(
             text=f"*Bantuan untuk modul Blacklist Stiker:*"
             f"\n\n*Commands:*"
-            f"\n❍ /blsticker: Lihat stiker yang masuk daftar hitam saat ini
+            f"\n❍ /blsticker: Lihat stiker yang masuk daftar hitam saat ini."
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /addblsticker (tautan stiker): Tambahkan pemicu stiker ke daftar hitam. Dapat dilakukan dengan cara reply stiker
-            f"\n❍ /unblsticker (tautan stiker): Hapus pemicu dari daftar hitam. Logika baris baru yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus
-            f"\n❍ /rmblsticker (tautan stiker): Sama seperti di atas
-            f"\n❍ /blstickermode (ban/tban/mute/tmute): mengatur tindakan default tentang apa yang harus dilakukan jika pengguna menggunakan stiker yang masuk daftar hitam
+            f"\n❍ /addblsticker (tautan stiker): Tambahkan pemicu stiker ke daftar hitam. Dapat dilakukan dengan cara reply stiker."
+            f"\n❍ /unblsticker (tautan stiker): Hapus pemicu dari daftar hitam. Logika baris baru yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus."
+            f"\n❍ /rmblsticker (tautan stiker): Sama seperti di atas."
+            f"\n❍ /blstickermode (ban/tban/mute/tmute): mengatur tindakan default tentang apa yang harus dilakukan jika pengguna menggunakan stiker yang masuk daftar hitam.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
