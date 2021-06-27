@@ -75,10 +75,9 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hai yang disana! 
-[Rosi](https://t.me/RosiManage_bot) adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
- 
-👉🏻 *Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
- 
+Rosi adalah Bot *yang paling lengkap* dan *gratis* untuk membantumu *mengelola* grup anda dengan lebih mudah dan *aman*! 
+*Tambahkan saya ke Supergrup* dan atur saya sebagai Admin agar saya dapat bertindak!
+ [ㅤ](https://telegra.ph/file/68cbef94c97ad8055ba2e.jpg)
 ❓ *APA PERINTAHNYA?* ❓
 Tekan Bantuan untuk *melihat semua perintah* dan bagaimana mereka bekerja! 
 """
@@ -556,14 +555,14 @@ def DaisyX_about_callback(update, context):
         )                
     elif query.data == "aboutmanu_admin":
         query.message.edit_text(
-            text=f"*Bantuan untuk ️modul Admin*"
+            text=f"*Bantuan untuk ️modul Admin:*"
             f"\n\n*Admin rights:*"
             f"\n❍ /pin: reply pesan untuk disematkan, tambahkan 'loud' atau 'notify' untuk memberikan pemberitahuan kepada anggota."
             f"\n❍ /unpin: melepas pin pesan yang saat ini disematkan."
             f"\n❍ /invitelink: mendapat tautan grup."
             f"\n❍ /promote: mempromosikan pengguna"
             f"\n❍ /demote: menurunkan pengguna."
-            f"\n❍ /title [title]: menetapkan judul khusus untuk admin yang dipromosikan bot.",
+            f"\n❍ /title (title): menetapkan judul khusus untuk admin yang dipromosikan bot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -579,15 +578,15 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_amanage":
         query.message.edit_text(
-            text=f"*Bantuan untuk ️modul Admin*"
+            text=f"*Bantuan untuk ️modul Admin:*"
             f"\n\n*Manage:*"
-            f"\n\n❍ /admincache: refresh daftar admin."
-            f"\n❍ /antispam [on/off]: Akan mengaktifkan teknologi antispam kami atau mengembalikan pengaturan Anda saat ini."
+            f"\n❍ /admincache: refresh daftar admin."
+            f"\n❍ /antispam (on/off): Akan mengaktifkan teknologi antispam kami atau mengembalikan pengaturan Anda saat ini."
             f"\n❍ /setgtitle [new title]: Mengatur judul obrolan baru di grup Anda."
             f"\n❍ /setgpic: Sebagai balasan ke file atau foto untuk mengatur gambar profil grup!"
             f"\n❍ /delgpic: Sama seperti di atas tetapi untuk menghapus foto profil grup."
             f"\n❍ /setsticker: Sebagai balasan untuk beberapa stiker untuk ditetapkan sebagai set stiker grup!"
-            f"\n❍ /setdescription [deskripsi]: Mengatur deskripsi obrolan baru di grup.",
+            f"\n❍ /setdescription (deskripsi): Mengatur deskripsi obrolan baru di grup.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -596,7 +595,7 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_cleaner":
         query.message.edit_text(
-            text=f"*Bantuan untuk ️modul Admin*"
+            text=f"*Bantuan untuk ️modul Admin:*"
             f"\n\n*Cleaner:*"
             f"\n❍ /zombies: Temukan semua akun yang dihapus di grup Anda."
             f"\n❍ /zombies clean: Hapus semua akun yang dihapus dari grup Anda.",
@@ -609,9 +608,9 @@ def DaisyX_about_callback(update, context):
     elif query.data == "aboutmanu_antiflood":
         query.message.edit_text(
             text=f"*Bantuan untuk modul AntiFlood*"
-            f"\n*Commands*"
+            f"\n\n*Commands*"
             f"\n❍ /flood: Dapatkan pengaturan pengendalian pesan banjir saat ini"
-            f"\n❍ /setflood [int/no/off']: mengaktifkan atau menonaktifkan pengendalian pesan banjir"
+            f"\n❍ /setflood (int/no/off'): mengaktifkan atau menonaktifkan pengendalian pesan banjir"
             f"\n❍ /setfloodmode [ban/kick/mute/tban/tmute] [nilai]: Tindakan yang harus dilakukan ketika pengguna telah melampaui batas pesan banjir. ban/tendangan/bisu/tmute/tban",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -649,15 +648,15 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_banned":
         query.message.edit_text(
-            text="*Bantuan untuk moduk Banned*"
+            text="*Bantuan untuk moduk Banned:*"
             f"\n\n*Commands:*"
             f"\n❍ /punchme: meninju pengguna yang menggunakan perintah ini"
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /ban [userhandle]: melarang pengguna.(melalui tag atau balasan)"
-            f"\n❍ /sban [userhandle]: Diam-diam melarang pengguna. Menghapus perintah, Membalas pesan dan tidak membalas.(melalui tag atau balasan)"
-            f"\n❍ /tban [userhandle] x [m/h/d]: melarang pengguna untuk x waktu yang ditentukan(melalui tag atau balasan)."
-            f"\n❍ /unban [userhandle]: membatalkan pemblokiran pengguna(melalui tag atau balasan)"
-            f"\n❍ /punch [userhandle]: Mengeluarkan pengguna dari grup(melalui tag atau reply).",
+            f"\n❍ /ban (userhandle): melarang pengguna.(melalui tag atau balasan)"
+            f"\n❍ /sban (userhandle): Diam-diam melarang pengguna. Menghapus perintah, Membalas pesan dan tidak membalas.(melalui tag atau balasan)"
+            f"\n❍ /tban (userhandle) x(m/h/d): melarang pengguna untuk x waktu yang ditentukan(melalui tag atau balasan)."
+            f"\n❍ /unban (userhandle): membatalkan pemblokiran pengguna(melalui tag atau balasan)"
+            f"\n❍ /punch (userhandle): Mengeluarkan pengguna dari grup(melalui tag atau reply).",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -671,13 +670,13 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_larang":
         query.message.edit_text(
-            text=f"*Bantuan untuk ️modul Banned*"
-            f"\n*About:*"
+            text=f"*Bantuan untuk ️modul Banned:*"
+            f"\n\n*About:*"
             f"\nm = menit"
             f"\nh = jam"
             f"\nd = hari"
             f"\n\n*Contoh:*"
-            f"\n❍ /tban @username 1d: ini akan melarang @username selama 1 hari.",
+            f"\n❍ /tban `@username` 1d: ini akan melarang `@username` selama 1 hari.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -686,30 +685,69 @@ def DaisyX_about_callback(update, context):
         )  
     elif query.data == "aboutmanu_blacklist":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Blacklist*"
-            f"\*Commands*"
-            f"\n /blacklist: Melihat kata-kata yang masuk daftar hitam saat ini."
+            text=f"*Bantuan untuk modul Blacklist:*"
+            f"\n\n*Commands*"
+            f"\n❍ /blacklist: Melihat kata-kata yang masuk daftar hitam saat ini."
             f"\n\n*Khusus Admin:*"
-            f"\n❍ /addblacklist [pemicu]: Menambahkan pemicu ke daftar hitam."
-            f"\n❍ /unblacklist [pemicu]: Hapus pemicu dari daftar hitam." 
-            f"\n❍ /blacklistmode [off/del/warn/ban/kick/mute/tban/tmute]: Tindakan yang dilakukan ketika seseorang mengirim kata-kata yang masuk daftar hitam.",
+            f"\n❍ /addblacklist (pemicu): Menambahkan pemicu ke daftar hitam."
+            f"\n❍ /unblacklist (pemicu): Hapus pemicu dari daftar hitam." 
+            f"\n❍ /blacklistmode (off/del/warn/ban/kick/mute/tban/tmute): Tindakan yang dilakukan ketika seseorang mengirim kata-kata yang masuk daftar hitam.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+                [
+                    [
+                        InlineKeyboardButton(text="About", callback_data="aboutmanu_listkata"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_listkata":
+        query.message.edit_text(
+            text=f"*Bantuan untuk modul Blacklist:*"
+            f"\n\n*About*"
+            f"\nBlacklist digunakan untuk menghentikan pemicu tertentu agar tidak diucapkan dalam grup. Setiap kali pemicu disebutkan, pesan akan segera dihapus. Kombo yang bagus terkadang memasangkan ini dengan filter Warns(peringatan)!"
+            f"\n\nCATATAN: Daftar hitam tidak memengaruhi admin grup"
+            f"\n- /blacklist: Setiap baris dianggap sebagai satu pemicu, jadi menggunakan baris yang berbeda akan memungkinkan Anda untuk menambahkan beberapa pemicu."
+            f"\n- /unblacklist: Logika baris baru yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus.",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_blacklist")]]
             ),
         )
     elif query.data == "aboutmanu_blstiker":
         query.message.edit_text(
-            text=f"*Perintah Dasar*"
-            f"\n\n👮🏻Tersedia untuk Admin"
-            f"\n🕵🏻Tersedia untuk Semua Anggota"
-            f"\n\nIf you are getting a message saying:"
-            f"\n<Code>You must be this chat administrator to perform this action!</code>"
-            f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
-            f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
+            text=f"*Bantuan untuk modul Blacklist Stiker:*"
+            f"\n\n*Commands:*"
+            f"\n❍ /blsticker: Lihat stiker yang masuk daftar hitam saat ini
+            f"\n\n*Khusus Admin:*"
+            f"\n❍ /addblsticker (tautan stiker): Tambahkan pemicu stiker ke daftar hitam. Dapat dilakukan dengan cara reply stiker
+            f"\n❍ /unblsticker (tautan stiker): Hapus pemicu dari daftar hitam. Logika baris baru yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus
+            f"\n❍ /rmblsticker (tautan stiker): Sama seperti di atas
+            f"\n❍ /blstickermode (ban/tban/mute/tmute): mengatur tindakan default tentang apa yang harus dilakukan jika pengguna menggunakan stiker yang masuk daftar hitam
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_permis")]]
+                [
+                    [
+                        InlineKeyboardButton(text="About", callback_data="aboutmanu_tikell"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                ]
+            ),
+        )
+    elif query.data == "aboutmanu_tikell":
+        query.message.edit_text(
+            text=f"*Bantuan untuk modul Blacklist Stiker:*"
+            f"\n\n*About*"
+            f"\nBlacklist Stiker digunakan untuk menghentikan stiker tertentu. Setiap kali stiker dikirim, pesan akan segera dihapus."
+            f"\n\nCATATAN: Daftar hitam tidak memengaruhi admin grup"
+            f"\n- Blacklist Stiker tidak memengaruhi admin grup"
+            f"\n- Link stiker bisa `https://t.me/addstickers/(nama_stiker)` atau cukup (`@sticker`) atau balas pesan stiker.",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_blstiker")]]
             ),
         ) 
     elif query.data == "aboutmanu_bteks":
@@ -1604,7 +1642,7 @@ def get_settings(update: Update, context: CallbackContext):
                             )
                         ],
                         [   
-                            InlineKeyboardButton(text="👥 Buka Disini",callback_data="help_back")],   
+                            InlineKeyboardButton(text="👥 Buka Disini",callback_data="aboutmanu_howto")],   
                     ]
                 ),
             )
