@@ -944,7 +944,7 @@ def DaisyX_about_callback(update, context):
         query.message.edit_text(
             text=f"*Bantuan untuk modul Warns:*"
             f"\n\n*About:*"
-            f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: ``/addwarn "insyekur" jangan insyekur mulu``. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata "insyekur","
+            f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: `/addwarn ”insyekur” jangan insyekur mulu`. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_warns")]]
@@ -994,7 +994,7 @@ def DaisyX_about_callback(update, context):
             f"\n❍ Pesan Welcome/Goodbye di grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda ingin pesan dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel berikut:"
             f"\n\n • {first}: ini mewakili nama depan pengguna"
             f"\n • {last}: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
-            f"\n • {fullname}: ini mewakili nama lengkap pengguna." Default untuk nama depan jika pengguna tidak memiliki nama belakang.
+            f"\n • {fullname}: ini mewakili nama lengkap pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
             f"\n • {username}: ini mewakili username pengguna. Default untuk menyebutkan nama depan pengguna jika tidak memiliki nama pengguna."
             f"\n • {mention}: ini hanya menyebut pengguna - menandai mereka dengan nama depan mereka."
             f"\n • {id}: ini mewakili id ​​pengguna."
