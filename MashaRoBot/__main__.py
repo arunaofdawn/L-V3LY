@@ -973,29 +973,6 @@ def DaisyX_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_welcome")]]
             ),
         )
-    elif query.data == "aboutmanu_datang":
-        query.message.edit_text(
-            text=f"About & Markdown"
-            f"\n❍ Pesan Welcome/Goodbye di grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda ingin pesan dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel berikut:"
-            f"\n\n • {first}: ini mewakili nama depan pengguna"
-            f"\n • {last}: ini mewakili nama belakang pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
-            f"\n • {fullname}: ini mewakili nama lengkap pengguna. Default untuk nama depan jika pengguna tidak memiliki nama belakang."
-            f"\n • {username}: ini mewakili username pengguna. Default untuk menyebutkan nama depan pengguna jika tidak memiliki nama pengguna."
-            f"\n • {mention}: ini hanya menyebut pengguna - menandai mereka dengan nama depan mereka."
-            f"\n • {id}: ini mewakili id ​​pengguna."
-            f"\n • {count}: ini mewakili nomor anggota pengguna."
-            f"\n • {chatname}: ini mewakili nama grup anda."
-            f"\n\n❍ Setiap variabel HARUS diapit oleh {} untuk diganti. Pesan welcome juga mendukung Markdown, sehingga Anda dapat membuat elemen apa pun menjadi Bold/italic/code/link."
-            f"\n\n❍ Button juga didukung dalam hal ini, sehingga Anda dapat membuat sambutan Anda terlihat luar biasa dengan beberapa tombol intro yang bagus."
-            f"\n\n❍ Untuk membuat tombol yang menautkan ke rules Anda, gunakan ini: [rules](buttonurl://t.me/RosoManage_bot?start=group_id). Cukup ganti group_id dengan id grup Anda, yang dapat diperoleh menggunakan perintah /id, dan Anda siap melakukannya."
-            f"\n\n❍ Perhatikan bahwa id grup biasanya didahului dengan tanda - (min); ini wajib, jadi tolong jangan dihapus."
-            f"\n\n❍ Anda bahkan dapat mengatur gambar/gifs/video/pesan suara sebagai pesan welcome datang dengan membalas media yang diinginkan, dengan menggunakan /setwelcome.",
-            disable_web_page_preview=True,
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_welcome")]]
-            ),
-        )
     elif query.data == "aboutmanu_approve":
         query.message.edit_text(
             text=f"*Perintah Dasar*"
