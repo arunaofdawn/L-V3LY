@@ -774,15 +774,15 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_filters":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Filters:*"
-            f"\n\n*Commands:*"
+            text=f"<b>Bantuan untuk modul Filters:</b>"
+            f"\n\n<b>Commands:</b>"
             f"\n❍ /filters: Melihat daftar semua filter aktif yang disimpan dalam obrolan."
-            f"\n\n*Khusus Admin:*"
+            f"\n\n<b>Khusus Admin:</b>"
             f"\n❍ /filter (kata kunci)(reply pesan): Tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu setiap kali "kata kunci" disebutkan. Jika Anda membalas ke stiker dengan kata kunci, bot akan membalas dengan stiker itu."
             f"\n❍ /stop (kata kunci): Hentikan filter itu."
-            f"\n\n*Khusus Owner:*"
+            f"\n\n<b>Khusus Owner:</b>"
             f"\n❍ /removeallfilters: Hapus semua filter obrolan sekaligus.",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -918,19 +918,19 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_warns":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Warns:*"
-            f"\n\n*Commands:*"
+            text=f"<b>Bantuan untuk modul Warns:</b>"
+            f"\n\n<b>Commands:</b>"
             f"\n❍ /warns (userhandle): melihat jumlah warn pengguna, dan alasan dari warn."
             f"\n❍ /warnlist: daftar semua filter peringatan saat ini."
-            f"\n\n*Khusus Admin:*"
+            f"\n\n<b>Khusus Admin:</b>"
             f"\n❍ /warn (userhandle): memperingatkan pengguna. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /dwarn (userhandle): memperingatkan pengguna dan menghapus pesan. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /resetwarn (userhandle): mengatur ulang peringatan untuk pengguna. Bisa juga digunakan sebagai balasan."
-            f"\n❍ /addwarn (kata kunci) [repy pesan]: mengatur filter peringatan pada kata kunci tertentu."
+            f"\n❍ /addwarn (kata kunci) (repy pesan): mengatur filter peringatan pada kata kunci tertentu."
             f"\n❍ /nowarn (kata kunci): menghentikan filter peringatan."
             f"\n❍ /warnlimit (jumlah): mengatur batas peringatan."
             f"\n❍ /strongwarn (on/yes): Jika disetel ke 'on', pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick.",
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
