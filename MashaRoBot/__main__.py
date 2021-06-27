@@ -435,7 +435,7 @@ def DaisyX_about_callback(update, context):
                     [
                         InlineKeyboardButton(text="Rules", callback_data="aboutmanu_rules"),
                         InlineKeyboardButton(text="Tag", callback_data="aboutmanu_tag"),
-                        InlineKeyboardButton(text="Warns", callback_data="aboutmanu_warns"),
+                        InlineKeyboardButton(text="Warns", callback_data="aboutmanu_ingat"),
                         InlineKeyboardButton(text="Welcome",callback_data="aboutmanu_welcome")
                     ],
                     [   
@@ -915,9 +915,9 @@ def DaisyX_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_tag")]]
             ),
         )
-    elif query.data == "aboutmanu_warns":
+    elif query.data == "aboutmanu_ingat":
         query.message.edit_text(
-            text=f"*Bantuan untuk modul Warns:*"
+            text=f"Bantuan untuk modul Warns:"
             f"\n\nCommands:"
             f"\n❍ /warns (userhandle): melihat jumlah warn pengguna, dan alasan dari warn."
             f"\n❍ /warnlist: daftar semua filter peringatan saat ini."
@@ -925,12 +925,13 @@ def DaisyX_about_callback(update, context):
             f"\n❍ /warn (userhandle): memperingatkan pengguna. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /dwarn (userhandle): memperingatkan pengguna dan menghapus pesan. Setelah 3 kali peringatan, pengguna akan diblokir dari grup."
             f"\n❍ /resetwarn (userhandle): mengatur ulang peringatan untuk pengguna. Bisa juga digunakan sebagai balasan."
-            f"\n❍ /addwarn (kata kunci) (repy pesan): mengatur filter peringatan pada kata kunci tertentu."
+            f"\n❍ /addwarn (kata kunci x repy pesan): mengatur filter peringatan pada kata kunci tertentu."
             f"\n❍ /nowarn (kata kunci): menghentikan filter peringatan."
             f"\n❍ /warnlimit (jumlah): mengatur batas peringatan."
-            f"\n❍ /strongwarn (on/yes): Jika disetel ke 'on', pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick."
+            f"\n❍ /strongwarn (on/yes): Jika disetel ke on, pengguna yang melebihi batas peringatan akan mengakibatkan banned, yang lainnya hanya akan dikick."
             f"\n\nAbout:"
             f"\nJika Anda ingin kata kunci Anda menjadi kalimat, lampirkan dengan tanda kutip, seperti: addwarn ”insyekur” jangan insyekur mulu. Ini akan memperingati pengguna beserta alasannya jika menggunakan kata ”insyekur”,"
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Kembali", callback_data="aboutmanu_permis")]]
             ),
