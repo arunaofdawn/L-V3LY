@@ -919,7 +919,7 @@ def DaisyX_about_callback(update, context):
     elif query.data == "aboutmanu_warns":
         query.message.edit_text(
             text=f"*Bantuan untuk modul Warns:*"
-            f"\n\n*Commands:*
+            f"\n\n*Commands:*"
             f"\n❍ /warns (userhandle): melihat jumlah warn pengguna, dan alasan dari warn."
             f"\n❍ /warnlist: daftar semua filter peringatan saat ini."
             f"\n\n*Khusus Admin:*"
