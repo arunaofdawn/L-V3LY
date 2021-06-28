@@ -74,44 +74,20 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello I'm 𝕷𝖔𝖛𝖊𝖑𝖞 𝕽𝖔𝖇𝖔𝖙 ,
-༒︎ I ᴀᴍ ᴍᴜʟᴛɪ ᴛᴀʟᴇɴᴛᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ᴏsᴍ ғᴇᴀᴛᴜʀᴇs[.](https://telegra.ph/file/787339b6e43109c75a63c.mp4)
-
-➪ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴇxᴘʟᴏsɪᴠᴇ.
-
-➪ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ᴍᴀsᴛᴇʀ](t.me/TUSHAR204) ғᴏʀ ᴀɴʏ ǫᴜᴇʀʏ ᴀɴᴅ [ᴀᴘᴘᴇᴀʟ](https://t.me/LOVELYAPPEAL) ʜᴇʀᴇ.
-
-➪ ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ʜᴇʟᴘ ᴛᴏ ᴇxᴘʟᴏʀᴇ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ᴍᴇ ᴀɴᴅ ᴍʏ ғᴇᴀᴛᴜʀᴇs.
-
-➪ Pᴏᴡᴇʀᴇᴅ ʙʏ [𝕷𝖔𝖇𝖊 𝕱𝖆𝖎𝖑𝖚𝖗𝖊](t.me/shayri_of_loves)
+Hai nama saya Roso![ㅤ](https://telegra.ph/file/68cbef94c97ad8055ba2e.jpg)
+Saya adalah bot yang Strong dan berEnergi yang dapat membantu anda mengelola grup dengan lebih aman dan kuat!
+Tekan *Bantuan* untuk melihat daftar perintah dan bagaimana mereka bekerja! 
 """
 
 buttons = [
-    [
-        InlineKeyboardButton(
-            text="➕️ 𝐀𝐝𝐝 𝐋𝐨𝐯𝐞𝐥𝐲 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 ➕️", url="t.me/LOVELYR_OBOT?startgroup=true"),
+    [   InlineKeyboardButton(text="➕ Tambahkan ke grup ➕", url="t.me/GrupManajerBot?startgroup=start"),
     ],
-    [
-        InlineKeyboardButton(text="ℹ️𝐀𝐛𝐨𝐮𝐭", callback_data="masha_"),
-        InlineKeyboardButton(text="🆘𝐇𝐞𝐥𝐩", callback_data="help_back"),
+    [   InlineKeyboardButton(text="🔊 Channel", url="https://t.me/arunasupportbot"),
+        InlineKeyboardButton(text="Informasi 💬",callback_data="aboutmanu_"),
     ],
-    [
-        InlineKeyboardButton(
-            text="✨𝐋𝐨𝐯𝐞𝐥𝐲 𝐋𝐨𝐠𝐬✨", url="t.me/LOV3LYLOGS"),
-        InlineKeyboardButton(
-            text="👥𝐒𝐮𝐩𝐩𝐨𝐫𝐭👥", url="https://t.me/LOVELYAPPEAL"),
-    ],
-    [  
-        InlineKeyboardButton(text="😈𝐋𝐨𝐯𝐞𝐥𝐲 𝐃𝐞𝐯𝐬😈", url="https://t.me/LOVELYDEVS"
-    ),
-    ], 
-    [
-        InlineKeyboardButton(text="❤️𝐋𝐨𝐯𝐞 𝐬𝐭𝐚𝐭𝐮𝐬❤️", url="https://t.me/shayri_of_loves"
-    ), 
-    ],
-    [   
-        InlineKeyboardButton(text="🎧𝐕𝐜 𝐏𝐥𝐚𝐲𝐞𝐫🎧", url="https://telegra.ph/𝔏𝔬𝔳𝔢𝔩𝔶-06-15"
-    ),
+    [    
+        InlineKeyboardButton(text="🔧 Bantuan 🔧",callback_data="aboutmanu_howto"
+        ),
     ],
 ]
 
