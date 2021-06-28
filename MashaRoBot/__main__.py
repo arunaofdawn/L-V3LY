@@ -404,8 +404,6 @@ def Source_about_callback(update: Update, context: CallbackContext):
                 timeout=60,
                 disable_web_page_preview=False,
         )
-
-
     elif query.data == "aboutmanu_permis":
         query.message.edit_text(
             text=f"Selamat datang di menu bantuan"
