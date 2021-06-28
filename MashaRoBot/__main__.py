@@ -92,7 +92,7 @@ buttons = [
             text="Plugins", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="Bantuan", callback_data="aboutmanu_permis"
+        InlineKeyboardButton(text="Bantuan", callback_data="permis_"
     ),
     ],
 ]
@@ -418,12 +418,12 @@ def Permis_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Basic📕", callback_data="aboutmanu_permis"),
-                        InlineKeyboardButton(text="Advanced📗", callback_data="aboutmanu_advanced"),
+                        InlineKeyboardButton(text="Basic📕", callback_data="permis_"),
+                        InlineKeyboardButton(text="Advanced📗", callback_data="advanced_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Fun📘", callback_data="aboutmanu_fun"),
-                        InlineKeyboardButton(text="Tools📙", callback_data="aboutmanu_alat"),
+                        InlineKeyboardButton(text="Fun📘", callback_data="fun_"),
+                        InlineKeyboardButton(text="Tools📙", callback_data="tools_"),
                     ],
                     [   
                         InlineKeyboardButton(text="🔙Kembali", callback_data="permis_back")],
