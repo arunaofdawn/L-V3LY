@@ -384,7 +384,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Rosi*
+            text=""" Hi.. I'm *Roso*
                  \nHere is the [Source Code](https://t.me/arunasupportbot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
@@ -409,6 +409,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 @run_async
 def Aturgrup_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
+    if query.data == "aturgrup_":
             text="""*Settings Group*
                  \n""",
             parse_mode=ParseMode.MARKDOWN,
@@ -448,7 +449,7 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(text="📚All Cmd", callback_data="help_back"),
-                        InlineKeyboardButton(text="🔒Close", callback_data="tutup_"),
+                        InlineKeyboardButton(text="🔒Close", callback_data="kunci_"),
                         InlineKeyboardButton(text="▶️Other", callback_data="nextgrup_")],
                 ]
             ),
@@ -466,6 +467,7 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
 @run_async
 def Nextgrup_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
+    if query.data == "nextgrup_":
             text="""*Settings Group*
                  \n""",
             parse_mode=ParseMode.MARKDOWN,
@@ -498,12 +500,39 @@ def Nextgrup_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(text="◀️Back", callback_data="helpgrup_"),
-                        InlineKeyboardButton(text="🔒Close", callback_data="tutup_"),
+                        InlineKeyboardButton(text="🔒Close", callback_data="kunci_"),
                         InlineKeyboardButton(text="📚All Cmd", callback_data="help_back")],
                 ]
             ),
         )
     elif query.data == "nextgrup_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Kunci_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "kunci_":
+        query.message.edit_text(
+            text="""*Menu Closed🔐*
+                 \n""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=False,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Open Back", callback_data="aturgrup_")
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "kunci_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -539,15 +568,17 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "where do you want to open the settings menu.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="👤 Open private",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
-                    ]
+                    ],
+                    [
+                        InlineKeyboardButton(text="👥 Open here",callback_data="aturgrup_")],
                 ]
             ),
         )
@@ -807,11 +838,9 @@ def main():
 
     about_callback_handler = CallbackQueryHandler(Masha_about_callback, pattern=r"masha_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
-    permis_callback_handler = CallbackQueryHandler(Permis_about_callback, pattern=r"permis_")
-    basic_callback_handler = CallbackQueryHandler(Basic_about_callback, pattern=r"basic_")
-    advanced_callback_handler = CallbackQueryHandler(Advanced_about_callback, pattern=r"advanced_")
-    fun_callback_handler = CallbackQueryHandler(Fun_about_callback, pattern=r"fun_")
-    tools_callback_handler = CallbackQueryHandler(Tools_about_callback, pattern=r"tools_")
+    aturgrup_callback_handler = CallbackQueryHandler(Aturgrup_about_callback, pattern=r"aturgrup_")
+    nextgrup_callback_handler = CallbackQueryHandler(Nextgrup_about_callback, pattern=r"nextgrup_")
+    kunci_callback_handler = CallbackQueryHandler(Kunci_about_callback, pattern=r"kunci_")
 
 
     donate_handler = CommandHandler("donate", donate)
@@ -822,11 +851,9 @@ def main():
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
-    dispatcher.add_handler(permis_callback_handler)
-    dispatcher.add_handler(basic_callback_handler)
-    dispatcher.add_handler(advanced_callback_handler)
-    dispatcher.add_handler(fun_callback_handler)
-    dispatcher.add_handler(tools_callback_handler)
+    dispatcher.add_handler(aturgrup_callback_handler)
+    dispatcher.add_handler(nextgrup_callback_handler)
+    dispatcher.add_handler(kunci_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
