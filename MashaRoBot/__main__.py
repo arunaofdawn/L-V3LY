@@ -404,10 +404,15 @@ def Source_about_callback(update: Update, context: CallbackContext):
                 timeout=60,
                 disable_web_page_preview=False,
         )
-    elif query.data == "aboutmanu_permis":
+
+
+@run_async
+def Permis_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "permis_":
         query.message.edit_text(
-            text=f"Selamat datang di menu bantuan"
-            f"",
+            text="""Selamat datang di menu bantuan
+                 \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -421,14 +426,27 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Tools📙", callback_data="aboutmanu_alat"),
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_back")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="permis_back")],
                 ]
             ),
         )
-    elif query.data == "aboutmanu_permis":
+    elif query.data == "permis_back":
         query.message.edit_text(
-            text=f"*Basic Commands*"
-            f"",
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Basic_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "basic_":
+        query.message.edit_text(
+            text="""*Basic Commands*
+                 \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -455,14 +473,27 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Welcome",callback_data="aboutmanu_welcome")
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="basic_back")],
                 ]
             ),
         )
-    elif query.data == "aboutmanu_advanced":
+    elif query.data == "basic_back":
         query.message.edit_text(
-            text=f"*Advanced Commands*"
-            f"",
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Advanced_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "advanced_":
+        query.message.edit_text(
+            text="""*Advanced Commands*
+                 \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -489,14 +520,27 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Shield",callback_data="aboutmanu_shield")
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="advanced_back")],
                 ]
             ),
         )
-    elif query.data == "aboutmanu_fun":
+    elif query.data == "advanced_back":
         query.message.edit_text(
-            text=f"*Fun Commands*"
-            f"",
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Fun_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "fun_":
+        query.message.edit_text(
+            text="""*Fun Commands*
+                 \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -521,14 +565,27 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Youtube", callback_data="aboutmanu_youtube")
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="fun_back")],
                 ]
             ),
         )
-    elif query.data == "aboutmanu_alat":
+    elif query.data == "fun_back":
         query.message.edit_text(
-            text=f"*Fun Commands*"
-            f"",
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Tools_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "tools_":
+        query.message.edit_text(
+            text="""*Tools Commands*
+                 \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -560,10 +617,20 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Zipper", callback_data="aboutmanu_zipper")
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_howto")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="tools_back")],
                 ]
             ),
-        )                
+        )
+    elif query.data == "tools_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+ 
+           
     elif query.data == "aboutmanu_admin":
         query.message.edit_text(
             text=f"*Bantuan untuk ️modul Admin:*"
@@ -583,7 +650,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Cleaner", callback_data="aboutmanu_cleaner"),
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="permis_back")],
                 ]
             ),
         )
@@ -630,7 +697,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="About", callback_data="aboutmanu_flood"),
                     ],
                     [   
-                        InlineKeyboardButton(text="🔙Kembali", callback_data="aboutmanu_permis")],
+                        InlineKeyboardButton(text="🔙Kembali", callback_data="permis_back")],
                 ]
             ),
         )
@@ -1829,6 +1896,12 @@ def main():
 
     about_callback_handler = CallbackQueryHandler(Masha_about_callback, pattern=r"masha_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
+    permis_callback_handler = CallbackQueryHandler(Permis_about_callback, pattern=r"permis_")
+    basic_callback_handler = CallbackQueryHandler(Basic_about_callback, pattern=r"basic_")
+    advanced_callback_handler = CallbackQueryHandler(Advanced_about_callback, pattern=r"advanced_")
+    fun_callback_handler = CallbackQueryHandler(Fun_about_callback, pattern=r"fun_")
+    tools_callback_handler = CallbackQueryHandler(Tools_about_callback, pattern=r"tools_")
+
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -1838,6 +1911,11 @@ def main():
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
+    dispatcher.add_handler(permis_callback_handler)
+    dispatcher.add_handler(basic_callback_handler)
+    dispatcher.add_handler(advanced_callback_handler)
+    dispatcher.add_handler(fun_callback_handler)
+    dispatcher.add_handler(tools_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
