@@ -92,7 +92,7 @@ buttons = [
             text="Plugins", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="Bantuan", callback_data="aboutmanu_howto"
+        InlineKeyboardButton(text="Bantuan", callback_data="aboutmanu_permis"
     ),
     ],
 ]
