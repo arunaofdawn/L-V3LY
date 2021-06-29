@@ -485,9 +485,14 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                  InlineKeyboardButton(text="Mute🔇", callback_data="muted_")
-                  InlineKeyboardButton(text="Banned⛔️", callback_data="banned_")],
-            
+                [
+                    [
+                        InlineKeyboardButton(text="Muted🔇 ", callback_data="muted_"),
+                        InlineKeyboardButton(text="Banned⛔️", callback_data="banned_"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="Back", callback_data="aturgrup_")],
+                ]
             ),
         )
     elif query.data == "muted_":
@@ -514,6 +519,7 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
                 [[InlineKeyboardButton(text="Back", callback_data="atmin_")]]
             ),
         )
+
     elif query.data == "blok_":
         query.message.edit_text(
             text=f"*Bantuan untuk ️modul Admin:*"
@@ -619,9 +625,28 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aturgrup_")]]
+                [
+                    [
+                        InlineKeyboardButton(text="Format🔡", callback_data="format_"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="Back", callback_data="aturgrup_")],
+                ]
             ),
         )
+    elif query.data == "format_":
+        query.message.edit_text(
+            text=f"*Bantuan untuk ️modul Admin:*"
+            f"\n\n*Cleaner:*"
+            f"\n❍ /zombies: Temukan semua akun yang dihapus di grup Anda."
+            f"\n❍ /zombies clean: Hapus semua akun yang dihapus dari grup Anda.",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="welcome_")]]
+            ),
+        )
+
     elif query.data == "notes_":
         query.message.edit_text(
             text=f"*Bantuan untuk ️modul Admin:*"
@@ -659,18 +684,6 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "malam_":
-        query.message.edit_text(
-            text=f"*Bantuan untuk ️modul Admin:*"
-            f"\n\n*Cleaner:*"
-            f"\n❍ /zombies: Temukan semua akun yang dihapus di grup Anda."
-            f"\n❍ /zombies clean: Hapus semua akun yang dihapus dari grup Anda.",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aturgrup_")]]
-            ),
-        )
-    elif query.data == "nextgrup_":
         query.message.edit_text(
             text=f"*Bantuan untuk ️modul Admin:*"
             f"\n\n*Cleaner:*"
