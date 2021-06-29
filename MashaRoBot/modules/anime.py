@@ -532,18 +532,18 @@ def kayo(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Get information about anime, manga or characters from [AniList](anilist.co).
+Dapatkan informasi tentang anime, manga, atau karakter dari AniList.
 
-*Available commands:*
+Perintah yang tersedia:
 
- ❍ /anime <anime>*:* returns information about the anime.
- ❍ /character <character>*:* returns information about the character.
- ❍ /manga <manga>*:* returns information about the manga.
- ❍ /user <user>*:* returns information about a MyAnimeList user.
- ❍ /upcoming*:* returns a list of new anime in the upcoming seasons.
- ❍ /kaizoku <anime>*:* search an anime on animekaizoku.com
- ❍ /kayo <anime>*:* search an anime on animekayo.com
- ❍ /airing <anime>*:* returns anime airing info.
+ ❍ /anime <anime>: mengembalikan informasi tentang anime.
+ ❍ /character <karakter>: mengembalikan informasi tentang karakter tersebut.
+ ❍ /manga <manga>: mengembalikan informasi tentang manga.
+ ❍ /user <user>: mengembalikan informasi tentang pengguna MyAnimeList.
+ ❍ /upcoming: mengembalikan daftar anime baru di musim yang akan datang.
+ ❍ /kaizoku <anime>: cari anime di `animekaizoku.com`
+ ❍ /kayo <anime>: cari anime di `animekayo.com`
+ ❍ /airing <anime>: mengembalikan info penayangan anime.
 
 """
 
@@ -565,7 +565,7 @@ dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 
-__mod_name__ = "ᴀɴɪᴍᴇ🔰"
+__mod_name__ = "Anime👨🏻‍🎤"
 __command_list__ = [
     "anime",
     "manga",
