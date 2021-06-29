@@ -628,28 +628,25 @@ def adminlist(update, context):
 
 
 __help__ = """
- ❍ /admins*:* list of admins in the chat
+ ❍ /admins*:* Melihat daftar admin di grup
 
-*Admins only:*
- ❍ /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
- ❍ /unpin*:* unpins the currently pinned message
- ❍ /invitelink*:* gets invitelink
- ❍ /promote*:* promotes the user
- ❍ /demote*:* demotes the user
- ❍ /title <title here>*:* sets a custom title for an admin that the bot promoted
- ❍ /admincache*:* force refresh the admins list
- ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
- ❍ /setgtitle <newtitle>*:* Sets new chat title in your group.
- ❍ /setgpic*:* As a reply to file or photo to set group profile pic!
- ❍ /delgpic*:* Same as above but to remove group profile pic.
- ❍ /setsticker*:* As a reply to some sticker to set it as group sticker set!
- ❍ /setdescription <description>*:* Sets new chat description in group.
- ❍ /zombies*:* Find all deleted accounts in your group.
- ❍ /zombies clean*:* Remove all deleted accounts from your group.
+*Khusus Admin grup:*
+ ❍ /pin*:* Menyematkan pesan yang dibalas - tambahkan `'loud'` atau `'notify'` untuk memberikan pemberitahuan kepada anggota.
+ ❍ /unpin*:* Melepas pin pesan yang saat ini disematkan.
+ ❍ /invitelink*:* Cek tautan grup
+ ❍ /promote*:* Promoomosikan anggota
+ ❍ /demote*:* turunkan ke anggota
+ ❍ /title <title>*:* Menetapkan judul khusus untuk admin yang dipromosikan bot
+ ❍ /admincache*:* Refresh daftar admin
+ ❍ /antispam <on/off|yes/no>*:* Akan mengaktifkan teknologi antispam kami atau melihat pengaturan Anda saat ini.[about?](https://t.me/arunasupportbot/259)
+ ❍ /setgtitle <title>*:* Menetapkan judul obrolan baru di grup Anda.
+ ❍ /setgpic*:* Sebagai balasan ke file atau foto untuk mengatur gambar profil grup!
+ ❍ /delgpic*:* Sama seperti di atas tetapi untuk menghapus foto profil grup.
+ ❍ /setsticker*:* Balas ke stiker untuk menjadikannya sebagai pack stiker grup!.
+ ❍ /setdescription <deskripsi>*:* Tetapkan deskripsi obrolan baru di grup.
+ ❍ /zombies*:* Temukan semua akun yang terhapus di grup Anda.
+ ❍ /zombies clean*:* Kick semua akun yang terhapus dari grup Anda.
  
-*Note:* Night Mode chats get Automatically closed at 12 am(IST)
-and Automatically openned at 6 am(IST) To Prevent Night Spams.
-
 """
 
 ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
