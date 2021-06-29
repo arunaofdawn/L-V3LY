@@ -401,25 +401,26 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-*Antiflood* allows you to take action on users that send more than x messages in a row. Exceeding the set flood \
-will result in restricting that user.
- This will mute users if they send more than 10 messages in a row, bots are ignored.
+*Antiflood* memungkinkan Anda untuk mengambil tindakan pada pengguna yang mengirim lebih dari x pesan berturut-turut. Melebihi kumpulan banjir akan mengakibatkan membatasi pengguna tersebut.
 
- ❍ /flood*:* Get the current flood control setting
-• *Admins only:*
- ❍ /setflood <int/'no'/'off'>*:* enables or disables flood control
- *Example:* `/setflood 10`
- ❍ /setfloodmode <ban/kick/mute/tban/tmute> <value>*:* Action to perform when user have exceeded flood limit. ban/kick/mute/tmute/tban
-• *Note:*
- • Value must be filled for tban and tmute!!
- It can be:
- `5m` = 5 minutes
- `6h` = 6 hours
- `3d` = 3 days
- `1w` = 1 week
+ Ini akan membisukan pengguna jika mereka mengirim lebih dari 10 pesan berturut-turut, bot diabaikan.
+ ❍ /flood: Dapatkan pengaturan pengendalian banjir saat ini
+
+• *Khusus Admin grup:*
+ ❍ /setflood <int/'no' 'off'>: mengaktifkan atau menonaktifkan pengendalian banjir
+ Contoh: /setflood 10
+ ❍ /setfloodmode <ban/kick/mute/tban/tmute> <nilai>: Tindakan yang dilakukan ketika pengguna telah melampaui batas banjir. ban/kick/mute/tmute/tban
+
+• Catatan:
+• Nilai harus diisi untuk tban dan tmute !!
+  Seperti:
+  5m = 5 menit
+  6h = 6 jam
+  3d = 3 hari
+  1w = 1 minggu
  """
 
-__mod_name__ = "ᴄᴏɴᴛʀᴏʟ🛠"
+__mod_name__ = "AntiFood⏳"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.group, check_flood
