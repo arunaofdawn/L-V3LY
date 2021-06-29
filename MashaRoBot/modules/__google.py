@@ -275,13 +275,13 @@ async def apk(e):
         await e.reply("Exception Occured:- " + str(err))
 
 
-__mod_name__ = "Gᴏᴏɢʟᴇ🛑"
+__mod_name__ = "Google🌐"
 
 __help__ = """
- ❍ /google <text>*:* Perform a google search
- ❍ /img <text>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
- ❍ /app <appname>*:* Searches for an app in Play Store and returns its details.
- ❍ /reverse: Does a reverse image search of the media which it was replied to.
- ❍ Lovely <query>*:* Lovely answers the query
-  💡Ex: `Lovely where is India?`
+ ❍ /google <teks>*:* Lakukan pencarian google
+ ❍ /img <teks>*:* Telusuri Google untuk gambar dan kembalikan\nUntuk lebih banyak lagi. dari hasil tentukan lim, Misalnya: `/img hello lim=10`
+ ❍ /app <aplikasi>*:* Mencari aplikasi di Play Store dan mengembalikan detailnya.
+ ❍ /reverse: Melakukan pencarian gambar terbalik dari media yang dibalas.
+ ❍ Rosi <pertanyaan>*:* Rosi menjawab anda
+  💡Ex: `Rosi kamu siapa?`
 """
