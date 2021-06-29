@@ -417,32 +417,32 @@ def Aturgrup_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Shield ", callback_data="mute_"),
-                        InlineKeyboardButton(text="Admin 🧑‍✈️", callback_data="blok_"),
+                        InlineKeyboardButton(text="Shield ", callback_data="shield_"),
+                        InlineKeyboardButton(text="Admin 🧑‍✈️", callback_data="atmin_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Block 🚫", callback_data="tag_"),
-                        InlineKeyboardButton(text="Anti-Flood ⏳", callback_data="filter_"),   
+                        InlineKeyboardButton(text="Block 🚫", callback_data="blok_"),
+                        InlineKeyboardButton(text="Anti-Flood ⏳", callback_data="flood_"),   
                     ],
                     [
-                        InlineKeyboardButton(text="Bl-Stiker 🃏", callback_data="warn_"),
-                        InlineKeyboardButton(text="Disable ❎", callback_data="bans_"),
+                        InlineKeyboardButton(text="Bl-Stiker 🃏", callback_data="blstiker_"),
+                        InlineKeyboardButton(text="Delete 🗑", callback_data="delete_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Blacklist 📓", callback_data="rules_"),
-                        InlineKeyboardButton(text="Filters 💬", callback_data="admin_"),
+                        InlineKeyboardButton(text="Blacklist 📓", callback_data="blacklist_"),
+                        InlineKeyboardButton(text="Filters 💬", callback_data="filter_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Reports 🗣", callback_data="notes_"),
-                        InlineKeyboardButton(text="Rules 📜", callback_data="blacklist_"),   
+                        InlineKeyboardButton(text="Reports 🗣", callback_data="report_"),
+                        InlineKeyboardButton(text="Rules 📜", callback_data="rules_"),   
                     ],
                     [
-                        InlineKeyboardButton(text="Welcome ⛩", callback_data="captcha_"),
-                        InlineKeyboardButton(text="Notes 📝", callback_data="datang_"),
+                        InlineKeyboardButton(text="Welcome ⛩", callback_data="welcome_"),
+                        InlineKeyboardButton(text="Notes 📝", callback_data="notes_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Log-Channel 📬", callback_data="spam_"),
-                        InlineKeyboardButton(text="Warns ⚠️", callback_data="banjir_"),   
+                        InlineKeyboardButton(text="Log-Channel 📬", callback_data="logchanel_"),
+                        InlineKeyboardButton(text="Warns ⚠️", callback_data="warns_"),   
                     ],
                     [
                         InlineKeyboardButton(text="Night Mode 🌒",callback_data="malam_"),
@@ -475,7 +475,7 @@ def Nextgrup_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Info-User ℹ️", callback_data="purge_"),
+                        InlineKeyboardButton(text="Info-User ℹ️", callback_data="user_"),
                     ],
                     [
                         InlineKeyboardButton(text="Stickers 🎭", callback_data="stiker_"),   
@@ -484,20 +484,20 @@ def Nextgrup_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Connection 🕹", callback_data="koneksi_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Force-Subs 🔔",callback_data="youtube_"),
+                        InlineKeyboardButton(text="Force-Subs 🔔",callback_data="force_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Approve ✅ ", callback_data="musik_"),
+                        InlineKeyboardButton(text="Tagger 🔊", callback_data="tag_"),
                     ],
                     [
                         InlineKeyboardButton(text="Federation 🛂", callback_data="federasi_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Clean-Blue 🌀", callback_data="pembersih_"),   
+                        InlineKeyboardButton(text="Clean-Blue 🌀", callback_data="blue_"),   
                     ],
                     [
-                        InlineKeyboardButton(text="Delete 🗑", callback_data="pembersih_"),
-                        InlineKeyboardButton(text="Tagger 🔊", callback_data="force_"),
+                        InlineKeyboardButton(text="Approve ✅", callback_data="approve_"),
+                        InlineKeyboardButton(text="Disable ❎", callback_data="disable_"),
                     ],
                     [
                         InlineKeyboardButton(text="◀️Back", callback_data="helpgrup_"),
