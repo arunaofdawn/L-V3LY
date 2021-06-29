@@ -495,13 +495,11 @@ def __stats__():
 
 
 __help__ = """
-Berikut adalah bantuan untuk modul #Blacklists stickerss:
-
-Blacklist sticker digunakan untuk menghentikan stiker tertentu. Setiap kali stiker dikirim, pesan tersebut akan segera dihapus.
-CATATAN: Stiker Blacklist tidak mempengaruhi admin grup.
- ❍ /blsticker: Lihat stiker daftar hitam saat ini.
+Blacklist Stiker digunakan untuk menghentikan stiker tertentu. Setiap kali stiker dikirim, pesan tersebut akan segera dihapus.
+*CATATAN:* Blacklist Stiker tidak mempengaruhi admin grup.
+ ❍ /blsticker: Lihat blacklist stiker saat ini.
 • *Khusus Admin grup:*
- ❍ /addblsticker <link tikel>Tambahkan pemicu stiker ke daftar hitam. Dapat ditambahkan melalui stiker balasan.
+ ❍ /addblsticker <link tikel>Tambahkan pemicu stiker ke daftar hitam. Dapat ditambahkan dengan cara reply stiker.
  ❍ /unblsticker <link tikel>: Hapus pemicu dari daftar hitam. Logika baris baru yang sama berlaku di sini, jadi Anda bisa menghapus beberapa pemicu sekaligus.
  ❍ /rmblsticker <link tikel>: Sama seperti di atas.
  ❍ /blstickermode <ban/tban/mute/tmute>
