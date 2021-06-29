@@ -495,19 +495,21 @@ def __stats__():
 
 
 __help__ = """
-Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
-*NOTE:* Blacklist stickers do not affect the group admin
- ❍ /blsticker*:* See current blacklisted sticker
-*Only admin:*
- ❍ /addblsticker <sticker link>*:* Add the sticker trigger to the black list. Can be added via reply sticker
- ❍ /unblsticker <sticker link>*:* Remove triggers from blacklist. The same newline logic applies here, so you can delete multiple triggers at once
- ❍ /rmblsticker <sticker link>*:* Same as above
- ❍ /blstickermode <ban/tban/mute/tmute>*:* sets up a default action on what to do if users use blacklisted stickers
-Note:
- ❍ <sticker link> can be `https://t.me/addstickers/<sticker>` or just `<sticker>` or reply to the sticker message
+Berikut adalah bantuan untuk modul #Blacklists stickerss:
+
+Blacklist sticker digunakan untuk menghentikan stiker tertentu. Setiap kali stiker dikirim, pesan tersebut akan segera dihapus.
+CATATAN: Stiker Blacklist tidak mempengaruhi admin grup.
+ ❍ /blsticker: Lihat stiker daftar hitam saat ini.
+• *Khusus Admin grup:*
+ ❍ /addblsticker <link tikel>Tambahkan pemicu stiker ke daftar hitam. Dapat ditambahkan melalui stiker balasan.
+ ❍ /unblsticker <link tikel>: Hapus pemicu dari daftar hitam. Logika baris baru yang sama berlaku di sini, jadi Anda bisa menghapus beberapa pemicu sekaligus.
+ ❍ /rmblsticker <link tikel>: Sama seperti di atas.
+ ❍ /blstickermode <ban/tban/mute/tmute>
+catatan:
+ - <link stiker> bisa https://t.me/namatikel atau hanya <@namatikel> atau membalas(reply) pesan stiker.
 """
 
-__mod_name__ = "ʙ sᴛɪᴄᴋ⛔️ "
+__mod_name__ = "Bl-Stiker"
 
 BLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler(
     "blsticker", blackliststicker, admin_ok=True
