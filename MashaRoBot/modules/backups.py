@@ -367,15 +367,14 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
-__mod_name__ = "ʙᴀᴄᴋᴜᴘs〽️"
+__mod_name__ = "Backups ♻️"
 
 __help__ = """
-*Only for group owner:*
+*Hanya untuk pemilik grup:*
 
- ❍ /import: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
- Note that files / photos cannot be imported due to telegram restrictions.
+ ❍ /import: Membalas file cadangan agar butler/grup emilia dapat mengimpor sebanyak mungkin, membuat transfer menjadi sangat mudah! Perhatikan bahwa file/foto tidak dapat diimpor karena batasan telegram.
 
- ❍ /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
+ ❍ /ekspor: Ekspor data grup, yang akan diekspor adalah: aturan, catatan (dokumen, gambar, musik, video, audio, suara, teks, tombol teks)
 
 """
 
