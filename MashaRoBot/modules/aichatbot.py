@@ -184,9 +184,9 @@ async def redaura(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Lovely")
-    result = result.replace("Eliza", "@LOVELYR_OBOT")
-    result = result.replace("Hi~", "Hello Friend I Am @LOVELYR_OBOT")
+    result = result.replace("Aco", "Rosi")
+    result = result.replace("Eliza", "@RosiManage_bot")
+    result = result.replace("Hi~", "Hello Friend I Am Rosi")
     result = result.replace("My dear great botmaster, Lyciabot Team.", "Made By @TUSHAR204")
     result = result.replace("Have the control right.", "My Father Is @TUSHAR204")
     result = result.replace("I was created by Lyciabot Team.", "I was created by @LOVELYDEVS Team.")
