@@ -1,12 +1,9 @@
 __help__ = """
 Here is help for downloading audio|video from YouTube
 - /ytaudio <link> 
-Example - "/ytaudio https://youtu.be/i0_m90T04uw"
-Aᴜᴅɪᴏ ɪsɴ'ᴛ sᴜᴘᴘᴏʀᴛɪɴɢ , ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴠɪᴅᴇᴏ
+Example - "/ytaudio https://www.youtube.com/watch?v=XxAT-T3lk8E"
 
 - /ytvideo <link> 
-Example - "/ytvideo https://youtu.be/i0_m90T04uw"
-
-SUPPORT [LOVE STATUS❤️](https://t.me/shayri_of_loves
+Example - "/ytvideo https://www.youtube.com/watch?v=XxAT-T3lk8E"
 """
-__mod_name__ = "ʏᴏᴜᴛᴜʙᴇ🎞"
+__mod_name__ = "Youtube"
